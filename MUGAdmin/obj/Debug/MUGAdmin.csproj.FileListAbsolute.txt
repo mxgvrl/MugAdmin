@@ -1,0 +1,15 @@
+D:\Рабочий стол\MUGAdmin\MUGAdmin\bin\Debug\MUGAdmin.exe.config
+D:\Рабочий стол\MUGAdmin\MUGAdmin\bin\Debug\MUGAdmin.exe
+D:\Рабочий стол\MUGAdmin\MUGAdmin\bin\Debug\MUGAdmin.pdb
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.csprojAssemblyReference.cache
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormLogin.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormMain.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.Properties.Resources.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.csproj.GenerateResource.cache
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.csproj.CoreCompileInputs.cache
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.exe
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.pdb
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormManageUser.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormManageProduct.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormManageAdditions.resources
+D:\Рабочий стол\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormManageOrders.resources
