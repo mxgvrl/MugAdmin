@@ -7,6 +7,27 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MugDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MugDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MUGAdmin.Properties.Settings.GlobalReference.Default.MugDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Order_CompositionTableAdapter" GeneratorDataComponentClassName="Order_CompositionTableAdapter" Name="Order_Composition" UserDataComponentName="Order_CompositionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MugDBConnectionString (Settings)" DbObjectName="MugDB.dbo.Order_Composition" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, userName, productName, additionName, orderCount, orderId FROM Order_Composition</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="userName" DataSetColumn="userName" />
+              <Mapping SourceColumn="productName" DataSetColumn="productName" />
+              <Mapping SourceColumn="additionName" DataSetColumn="additionName" />
+              <Mapping SourceColumn="orderCount" DataSetColumn="orderCount" />
+              <Mapping SourceColumn="orderId" DataSetColumn="orderId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdditionsTableAdapter" GeneratorDataComponentClassName="AdditionsTableAdapter" Name="Additions" UserDataComponentName="AdditionsTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MugDBConnectionString (Settings)" DbObjectName="MugDB.dbo.Additions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -314,26 +335,6 @@ SELECT id, userName, userPassword, adress, userRole FROM Users WHERE (id = @id)<
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Order_CompositionTableAdapter" GeneratorDataComponentClassName="Order_CompositionTableAdapter" Name="Order_Composition" UserDataComponentName="Order_CompositionTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MugDBConnectionString (Settings)" DbObjectName="MugDB.dbo.Order_Composition" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, userName, productName, additionName, orderCount FROM dbo.Order_Composition</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id" DataSetColumn="id" />
-              <Mapping SourceColumn="userName" DataSetColumn="userName" />
-              <Mapping SourceColumn="productName" DataSetColumn="productName" />
-              <Mapping SourceColumn="additionName" DataSetColumn="additionName" />
-              <Mapping SourceColumn="orderCount" DataSetColumn="orderCount" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="User_OrderTableAdapter" GeneratorDataComponentClassName="User_OrderTableAdapter" Name="User_Order" UserDataComponentName="User_OrderTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MugDBConnectionString (Settings)" DbObjectName="MugDB.dbo.User_Order" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -360,6 +361,36 @@ SELECT id, userName, userPassword, adress, userRole FROM Users WHERE (id = @id)<
   <xs:element name="MugDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MugDBDataSet" msprop:Generator_UserDSName="MugDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Order_Composition" msprop:Generator_TableClassName="Order_CompositionDataTable" msprop:Generator_TableVarName="tableOrder_Composition" msprop:Generator_RowChangedName="Order_CompositionRowChanged" msprop:Generator_TablePropName="Order_Composition" msprop:Generator_RowDeletingName="Order_CompositionRowDeleting" msprop:Generator_RowChangingName="Order_CompositionRowChanging" msprop:Generator_RowEvHandlerName="Order_CompositionRowChangeEventHandler" msprop:Generator_RowDeletedName="Order_CompositionRowDeleted" msprop:Generator_RowClassName="Order_CompositionRow" msprop:Generator_UserTableName="Order_Composition" msprop:Generator_RowEvArgName="Order_CompositionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="userName" msprop:Generator_ColumnVarNameInTable="columnuserName" msprop:Generator_ColumnPropNameInRow="userName" msprop:Generator_ColumnPropNameInTable="userNameColumn" msprop:Generator_UserColumnName="userName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="productName" msprop:Generator_ColumnVarNameInTable="columnproductName" msprop:Generator_ColumnPropNameInRow="productName" msprop:Generator_ColumnPropNameInTable="productNameColumn" msprop:Generator_UserColumnName="productName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="additionName" msprop:Generator_ColumnVarNameInTable="columnadditionName" msprop:Generator_ColumnPropNameInRow="additionName" msprop:Generator_ColumnPropNameInTable="additionNameColumn" msprop:Generator_UserColumnName="additionName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orderCount" msprop:Generator_ColumnVarNameInTable="columnorderCount" msprop:Generator_ColumnPropNameInRow="orderCount" msprop:Generator_ColumnPropNameInTable="orderCountColumn" msprop:Generator_UserColumnName="orderCount" type="xs:int" minOccurs="0" />
+              <xs:element name="orderId" msprop:Generator_ColumnVarNameInTable="columnorderId" msprop:Generator_ColumnPropNameInRow="orderId" msprop:Generator_ColumnPropNameInTable="orderIdColumn" msprop:Generator_UserColumnName="orderId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="Additions" msprop:Generator_TableClassName="AdditionsDataTable" msprop:Generator_TableVarName="tableAdditions" msprop:Generator_TablePropName="Additions" msprop:Generator_RowDeletingName="AdditionsRowDeleting" msprop:Generator_RowChangingName="AdditionsRowChanging" msprop:Generator_RowEvHandlerName="AdditionsRowChangeEventHandler" msprop:Generator_RowDeletedName="AdditionsRowDeleted" msprop:Generator_UserTableName="Additions" msprop:Generator_RowChangedName="AdditionsRowChanged" msprop:Generator_RowEvArgName="AdditionsRowChangeEvent" msprop:Generator_RowClassName="AdditionsRow">
           <xs:complexType>
             <xs:sequence>
@@ -462,35 +493,6 @@ SELECT id, userName, userPassword, adress, userRole FROM Users WHERE (id = @id)<
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Order_Composition" msprop:Generator_TableClassName="Order_CompositionDataTable" msprop:Generator_TableVarName="tableOrder_Composition" msprop:Generator_TablePropName="Order_Composition" msprop:Generator_RowDeletingName="Order_CompositionRowDeleting" msprop:Generator_RowChangingName="Order_CompositionRowChanging" msprop:Generator_RowEvHandlerName="Order_CompositionRowChangeEventHandler" msprop:Generator_RowDeletedName="Order_CompositionRowDeleted" msprop:Generator_UserTableName="Order_Composition" msprop:Generator_RowChangedName="Order_CompositionRowChanged" msprop:Generator_RowEvArgName="Order_CompositionRowChangeEvent" msprop:Generator_RowClassName="Order_CompositionRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="userName" msprop:Generator_ColumnVarNameInTable="columnuserName" msprop:Generator_ColumnPropNameInRow="userName" msprop:Generator_ColumnPropNameInTable="userNameColumn" msprop:Generator_UserColumnName="userName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="productName" msprop:Generator_ColumnVarNameInTable="columnproductName" msprop:Generator_ColumnPropNameInRow="productName" msprop:Generator_ColumnPropNameInTable="productNameColumn" msprop:Generator_UserColumnName="productName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="additionName" msprop:Generator_ColumnVarNameInTable="columnadditionName" msprop:Generator_ColumnPropNameInRow="additionName" msprop:Generator_ColumnPropNameInTable="additionNameColumn" msprop:Generator_UserColumnName="additionName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="orderCount" msprop:Generator_ColumnVarNameInTable="columnorderCount" msprop:Generator_ColumnPropNameInRow="orderCount" msprop:Generator_ColumnPropNameInTable="orderCountColumn" msprop:Generator_UserColumnName="orderCount" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="User_Order" msprop:Generator_TableClassName="User_OrderDataTable" msprop:Generator_TableVarName="tableUser_Order" msprop:Generator_TablePropName="User_Order" msprop:Generator_RowDeletingName="User_OrderRowDeleting" msprop:Generator_RowChangingName="User_OrderRowChanging" msprop:Generator_RowEvHandlerName="User_OrderRowChangeEventHandler" msprop:Generator_RowDeletedName="User_OrderRowDeleted" msprop:Generator_UserTableName="User_Order" msprop:Generator_RowChangedName="User_OrderRowChanged" msprop:Generator_RowEvArgName="User_OrderRowChangeEvent" msprop:Generator_RowClassName="User_OrderRow">
           <xs:complexType>
             <xs:sequence>
@@ -509,6 +511,10 @@ SELECT id, userName, userPassword, adress, userRole FROM Users WHERE (id = @id)<
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Order_Composition" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="Additions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Additions" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
@@ -526,10 +532,6 @@ SELECT id, userName, userPassword, adress, userRole FROM Users WHERE (id = @id)<
     </xs:unique>
     <xs:unique name="Users_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Users" />
-      <xs:field xpath="mstns:id" />
-    </xs:unique>
-    <xs:unique name="Order_Composition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Order_Composition" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
     <xs:unique name="User_Order_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
