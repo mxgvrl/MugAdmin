@@ -233,6 +233,7 @@
             this.tbAdditionCountEdit.Name = "tbAdditionCountEdit";
             this.tbAdditionCountEdit.Size = new System.Drawing.Size(136, 22);
             this.tbAdditionCountEdit.TabIndex = 29;
+            this.tbAdditionCountEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAdditionCountEdit_KeyPress);
             // 
             // tbCostEdit
             // 
@@ -241,6 +242,7 @@
             this.tbCostEdit.Name = "tbCostEdit";
             this.tbCostEdit.Size = new System.Drawing.Size(136, 22);
             this.tbCostEdit.TabIndex = 31;
+            this.tbCostEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostEdit_KeyPress);
             // 
             // btnEditAddition
             // 
@@ -298,6 +300,7 @@
             this.tbAdditionCountDelete.Name = "tbAdditionCountDelete";
             this.tbAdditionCountDelete.Size = new System.Drawing.Size(147, 22);
             this.tbAdditionCountDelete.TabIndex = 19;
+            this.tbAdditionCountDelete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAdditionCountDelete_KeyPress);
             // 
             // tbCostDelete
             // 
@@ -307,6 +310,7 @@
             this.tbCostDelete.Name = "tbCostDelete";
             this.tbCostDelete.Size = new System.Drawing.Size(147, 22);
             this.tbCostDelete.TabIndex = 21;
+            this.tbCostDelete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostDelete_KeyPress);
             // 
             // btnDeleteAddition
             // 
@@ -349,6 +353,7 @@
             this.tbAdditionCountAdd.Name = "tbAdditionCountAdd";
             this.tbAdditionCountAdd.Size = new System.Drawing.Size(168, 22);
             this.tbAdditionCountAdd.TabIndex = 16;
+            this.tbAdditionCountAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAdditionCountAdd_KeyPress);
             // 
             // tbCostAdd
             // 
@@ -357,6 +362,7 @@
             this.tbCostAdd.Name = "tbCostAdd";
             this.tbCostAdd.Size = new System.Drawing.Size(168, 22);
             this.tbCostAdd.TabIndex = 18;
+            this.tbCostAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostAdd_KeyPress);
             // 
             // btnAddAddition
             // 

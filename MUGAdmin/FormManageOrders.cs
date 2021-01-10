@@ -131,19 +131,26 @@ namespace MUGAdmin
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"insert into UserOrder (orderDate, userId) values(" +
-                $"'{dtpDateAdd.Value}', " +
-                $"(select userId from UserOrder where userId = (select id from Users where userName = '{cbNameAdd.Text}') ) );";
+            if (dtpDateAdd.Text != "" && cbNameAdd.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"insert into UserOrder (orderDate, userId) values(" +
+                    $"'{dtpDateAdd.Value}', " +
+                    $"(select userId from UserOrder where userId = (select id from Users where userName = '{cbNameAdd.Text}') ) );";
 
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
         }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
@@ -163,18 +170,25 @@ namespace MUGAdmin
 
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"UPDATE UserOrder " +
-                $"SET userId = (select userId from UserOrder where userId = (select id from Users where userName = '{cbNameEdit.Text}') ), orderDate = '{dtpDateEdit.Value}' " +
-                $"WHERE id = {cbIdEdit.Text};";
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+            if (dtpDateEdit.Text != "" && cbNameEdit.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"UPDATE UserOrder " +
+                    $"SET userId = (select userId from UserOrder where userId = (select id from Users where userName = '{cbNameEdit.Text}') ), orderDate = '{dtpDateEdit.Value}' " +
+                    $"WHERE id = {cbIdEdit.Text};";
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+             else
+            {
+                MessageBox.Show("Fill all fields");
+            }   
         }
 
         private void btnBackOrderManage_Click(object sender, EventArgs e)

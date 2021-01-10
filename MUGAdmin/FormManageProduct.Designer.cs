@@ -365,6 +365,7 @@
             this.tbVolumeEdit.Name = "tbVolumeEdit";
             this.tbVolumeEdit.Size = new System.Drawing.Size(189, 22);
             this.tbVolumeEdit.TabIndex = 33;
+            this.tbVolumeEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbVolumeEdit_KeyPress);
             // 
             // tbCompositionEdit
             // 
@@ -381,6 +382,7 @@
             this.tbCostEdit.Name = "tbCostEdit";
             this.tbCostEdit.Size = new System.Drawing.Size(189, 22);
             this.tbCostEdit.TabIndex = 37;
+            this.tbCostEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostEdit_KeyPress);
             // 
             // btnProductEdit
             // 
@@ -554,6 +556,7 @@
             this.tbVolumeAdd.Name = "tbVolumeAdd";
             this.tbVolumeAdd.Size = new System.Drawing.Size(193, 22);
             this.tbVolumeAdd.TabIndex = 20;
+            this.tbVolumeAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbVolumeAdd_KeyPress);
             // 
             // tbCompositionAdd
             // 
@@ -570,6 +573,7 @@
             this.tbCostAdd.Name = "tbCostAdd";
             this.tbCostAdd.Size = new System.Drawing.Size(193, 22);
             this.tbCostAdd.TabIndex = 24;
+            this.tbCostAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostAdd_KeyPress);
             // 
             // btnBackUserManage
             // 

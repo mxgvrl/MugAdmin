@@ -33,16 +33,16 @@
             System.Windows.Forms.Label userPasswordLabel1;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label adressLabel1;
-            System.Windows.Forms.Label userRoleLabel1;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label userPasswordLabel;
             System.Windows.Forms.Label adressLabel;
-            System.Windows.Forms.Label userRoleLabel;
             System.Windows.Forms.Label userNameLabel;
+            System.Windows.Forms.Label userRoleLabel2;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label userRoleLabel;
             this.mugDBDataSet = new MUGAdmin.MugDBDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.UsersTableAdapter();
@@ -52,7 +52,7 @@
             this.btnUserEdit = new System.Windows.Forms.Button();
             this.btnBackUserManage = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbRoleAdd = new System.Windows.Forms.TextBox();
+            this.cbRoleAdd = new System.Windows.Forms.ComboBox();
             this.tbAdressAdd = new System.Windows.Forms.TextBox();
             this.tbUserPasswordAdd = new System.Windows.Forms.TextBox();
             this.tbUserNameAdd = new System.Windows.Forms.TextBox();
@@ -63,8 +63,8 @@
             this.tbRoleDelete = new System.Windows.Forms.TextBox();
             this.cbIdDelete = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbRoleEdit = new System.Windows.Forms.ComboBox();
             this.cbIdEdit = new System.Windows.Forms.ComboBox();
-            this.tbRoleEdit = new System.Windows.Forms.TextBox();
             this.tbAdressEdit = new System.Windows.Forms.TextBox();
             this.tbUserPasswordEdit = new System.Windows.Forms.TextBox();
             this.tbUserNameEdit = new System.Windows.Forms.TextBox();
@@ -72,16 +72,16 @@
             userPasswordLabel1 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             adressLabel1 = new System.Windows.Forms.Label();
-            userRoleLabel1 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             userPasswordLabel = new System.Windows.Forms.Label();
             adressLabel = new System.Windows.Forms.Label();
-            userRoleLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
+            userRoleLabel2 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            userRoleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -125,15 +125,6 @@
             adressLabel1.TabIndex = 20;
             adressLabel1.Text = "adress:";
             // 
-            // userRoleLabel1
-            // 
-            userRoleLabel1.AutoSize = true;
-            userRoleLabel1.Location = new System.Drawing.Point(35, 151);
-            userRoleLabel1.Name = "userRoleLabel1";
-            userRoleLabel1.Size = new System.Drawing.Size(73, 17);
-            userRoleLabel1.TabIndex = 22;
-            userRoleLabel1.Text = "user Role:";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -142,15 +133,6 @@
             label1.Size = new System.Drawing.Size(23, 17);
             label1.TabIndex = 12;
             label1.Text = "id:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(24, 151);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(73, 17);
-            label5.TabIndex = 30;
-            label5.Text = "user Role:";
             // 
             // label4
             // 
@@ -197,15 +179,6 @@
             adressLabel.TabIndex = 7;
             adressLabel.Text = "adress:";
             // 
-            // userRoleLabel
-            // 
-            userRoleLabel.AutoSize = true;
-            userRoleLabel.Location = new System.Drawing.Point(14, 120);
-            userRoleLabel.Name = "userRoleLabel";
-            userRoleLabel.Size = new System.Drawing.Size(73, 17);
-            userRoleLabel.TabIndex = 9;
-            userRoleLabel.Text = "user Role:";
-            // 
             // userNameLabel
             // 
             userNameLabel.AutoSize = true;
@@ -214,6 +187,33 @@
             userNameLabel.Size = new System.Drawing.Size(81, 17);
             userNameLabel.TabIndex = 3;
             userNameLabel.Text = "user Name:";
+            // 
+            // userRoleLabel2
+            // 
+            userRoleLabel2.AutoSize = true;
+            userRoleLabel2.Location = new System.Drawing.Point(14, 122);
+            userRoleLabel2.Name = "userRoleLabel2";
+            userRoleLabel2.Size = new System.Drawing.Size(73, 17);
+            userRoleLabel2.TabIndex = 11;
+            userRoleLabel2.Text = "user Role:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(24, 151);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(73, 17);
+            label5.TabIndex = 30;
+            label5.Text = "user Role:";
+            // 
+            // userRoleLabel
+            // 
+            userRoleLabel.AutoSize = true;
+            userRoleLabel.Location = new System.Drawing.Point(35, 151);
+            userRoleLabel.Name = "userRoleLabel";
+            userRoleLabel.Size = new System.Drawing.Size(73, 17);
+            userRoleLabel.TabIndex = 24;
+            userRoleLabel.Text = "user Role:";
             // 
             // mugDBDataSet
             // 
@@ -281,9 +281,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(userRoleLabel2);
+            this.groupBox1.Controls.Add(this.cbRoleAdd);
             this.groupBox1.Controls.Add(userNameLabel);
-            this.groupBox1.Controls.Add(this.tbRoleAdd);
-            this.groupBox1.Controls.Add(userRoleLabel);
             this.groupBox1.Controls.Add(this.tbAdressAdd);
             this.groupBox1.Controls.Add(adressLabel);
             this.groupBox1.Controls.Add(this.tbUserPasswordAdd);
@@ -292,18 +292,22 @@
             this.groupBox1.Controls.Add(this.btnAddUser);
             this.groupBox1.Location = new System.Drawing.Point(19, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 246);
+            this.groupBox1.Size = new System.Drawing.Size(319, 251);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
             // 
-            // tbRoleAdd
+            // cbRoleAdd
             // 
-            this.tbRoleAdd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userRole", true));
-            this.tbRoleAdd.Location = new System.Drawing.Point(125, 117);
-            this.tbRoleAdd.Name = "tbRoleAdd";
-            this.tbRoleAdd.Size = new System.Drawing.Size(174, 22);
-            this.tbRoleAdd.TabIndex = 10;
+            this.cbRoleAdd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userRole", true));
+            this.cbRoleAdd.FormattingEnabled = true;
+            this.cbRoleAdd.Items.AddRange(new object[] {
+            "admin",
+            "user"});
+            this.cbRoleAdd.Location = new System.Drawing.Point(125, 117);
+            this.cbRoleAdd.Name = "cbRoleAdd";
+            this.cbRoleAdd.Size = new System.Drawing.Size(174, 24);
+            this.cbRoleAdd.TabIndex = 12;
             // 
             // tbAdressAdd
             // 
@@ -344,7 +348,7 @@
             this.groupBox2.Controls.Add(this.btnUserDelete);
             this.groupBox2.Location = new System.Drawing.Point(360, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(299, 246);
+            this.groupBox2.Size = new System.Drawing.Size(299, 251);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
@@ -398,9 +402,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(userRoleLabel);
+            this.groupBox3.Controls.Add(this.cbRoleEdit);
             this.groupBox3.Controls.Add(this.cbIdEdit);
-            this.groupBox3.Controls.Add(this.tbRoleEdit);
-            this.groupBox3.Controls.Add(userRoleLabel1);
             this.groupBox3.Controls.Add(this.tbAdressEdit);
             this.groupBox3.Controls.Add(this.btnUserEdit);
             this.groupBox3.Controls.Add(adressLabel1);
@@ -409,12 +413,24 @@
             this.groupBox3.Controls.Add(userPasswordLabel1);
             this.groupBox3.Controls.Add(userNameLabel1);
             this.groupBox3.Controls.Add(this.tbUserNameEdit);
-            this.groupBox3.Location = new System.Drawing.Point(689, 31);
+            this.groupBox3.Location = new System.Drawing.Point(675, 31);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 246);
+            this.groupBox3.Size = new System.Drawing.Size(309, 251);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";
+            // 
+            // cbRoleEdit
+            // 
+            this.cbRoleEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userRole", true));
+            this.cbRoleEdit.FormattingEnabled = true;
+            this.cbRoleEdit.Items.AddRange(new object[] {
+            "admin",
+            "user"});
+            this.cbRoleEdit.Location = new System.Drawing.Point(146, 146);
+            this.cbRoleEdit.Name = "cbRoleEdit";
+            this.cbRoleEdit.Size = new System.Drawing.Size(121, 24);
+            this.cbRoleEdit.TabIndex = 25;
             // 
             // cbIdEdit
             // 
@@ -426,14 +442,6 @@
             this.cbIdEdit.TabIndex = 15;
             this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
             this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
-            // 
-            // tbRoleEdit
-            // 
-            this.tbRoleEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userRole", true));
-            this.tbRoleEdit.Location = new System.Drawing.Point(146, 148);
-            this.tbRoleEdit.Name = "tbRoleEdit";
-            this.tbRoleEdit.Size = new System.Drawing.Size(121, 22);
-            this.tbRoleEdit.TabIndex = 23;
             // 
             // tbAdressEdit
             // 
@@ -496,19 +504,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox tbRoleAdd;
         private System.Windows.Forms.TextBox tbAdressAdd;
         private System.Windows.Forms.TextBox tbUserPasswordAdd;
         private System.Windows.Forms.TextBox tbUserNameAdd;
         private System.Windows.Forms.TextBox tbUserNameDelete;
         private System.Windows.Forms.TextBox tbUserPasswordDelete;
         private System.Windows.Forms.TextBox tbAdressDelete;
-        private System.Windows.Forms.TextBox tbRoleDelete;
         private System.Windows.Forms.ComboBox cbIdDelete;
         private System.Windows.Forms.ComboBox cbIdEdit;
-        private System.Windows.Forms.TextBox tbRoleEdit;
         private System.Windows.Forms.TextBox tbAdressEdit;
         private System.Windows.Forms.TextBox tbUserPasswordEdit;
         private System.Windows.Forms.TextBox tbUserNameEdit;
+        private System.Windows.Forms.ComboBox cbRoleAdd;
+        private System.Windows.Forms.TextBox tbRoleDelete;
+        private System.Windows.Forms.ComboBox cbRoleEdit;
     }
 }

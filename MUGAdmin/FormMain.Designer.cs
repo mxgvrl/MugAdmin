@@ -38,11 +38,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnUserManage = new System.Windows.Forms.Button();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.productImagePictureBox = new System.Windows.Forms.PictureBox();
@@ -59,25 +54,30 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnAdditionsManage = new System.Windows.Forms.Button();
             this.additionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.additionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.user_OrderDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.order_CompositionDataGridView = new System.Windows.Forms.DataGridView();
             this.order_CompositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.usersTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.UsersTableAdapter();
             this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
             this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
             this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
-            this.order_CompositionDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,8 +101,8 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderDataGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // productImageLabel
@@ -166,9 +166,9 @@
             // 
             // btnUserManage
             // 
-            this.btnUserManage.Location = new System.Drawing.Point(310, 328);
+            this.btnUserManage.Location = new System.Drawing.Point(300, 333);
             this.btnUserManage.Name = "btnUserManage";
-            this.btnUserManage.Size = new System.Drawing.Size(130, 36);
+            this.btnUserManage.Size = new System.Drawing.Size(170, 45);
             this.btnUserManage.TabIndex = 1;
             this.btnUserManage.Text = "Manage Table";
             this.btnUserManage.UseVisualStyleBackColor = true;
@@ -187,51 +187,11 @@
             this.usersDataGridView.DataSource = this.usersBindingSource;
             this.usersDataGridView.Location = new System.Drawing.Point(6, 6);
             this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.RowHeadersVisible = false;
             this.usersDataGridView.RowHeadersWidth = 51;
             this.usersDataGridView.RowTemplate.Height = 24;
-            this.usersDataGridView.Size = new System.Drawing.Size(746, 269);
+            this.usersDataGridView.Size = new System.Drawing.Size(746, 320);
             this.usersDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "userName";
-            this.dataGridViewTextBoxColumn5.HeaderText = "userName";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "userPassword";
-            this.dataGridViewTextBoxColumn6.HeaderText = "userPassword";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "adress";
-            this.dataGridViewTextBoxColumn7.HeaderText = "adress";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "userRole";
-            this.dataGridViewTextBoxColumn8.HeaderText = "userRole";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // usersBindingSource
             // 
@@ -257,7 +217,7 @@
             this.productImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productsBindingSource, "productImage", true));
             this.productImagePictureBox.Location = new System.Drawing.Point(531, 23);
             this.productImagePictureBox.Name = "productImagePictureBox";
-            this.productImagePictureBox.Size = new System.Drawing.Size(221, 222);
+            this.productImagePictureBox.Size = new System.Drawing.Size(221, 300);
             this.productImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.productImagePictureBox.TabIndex = 3;
             this.productImagePictureBox.TabStop = false;
@@ -269,9 +229,9 @@
             // 
             // btnProductManage
             // 
-            this.btnProductManage.Location = new System.Drawing.Point(320, 306);
+            this.btnProductManage.Location = new System.Drawing.Point(300, 333);
             this.btnProductManage.Name = "btnProductManage";
-            this.btnProductManage.Size = new System.Drawing.Size(130, 36);
+            this.btnProductManage.Size = new System.Drawing.Size(170, 45);
             this.btnProductManage.TabIndex = 2;
             this.btnProductManage.Text = "Manage Table";
             this.btnProductManage.UseVisualStyleBackColor = true;
@@ -295,7 +255,7 @@
             this.productsDataGridView.RowHeadersVisible = false;
             this.productsDataGridView.RowHeadersWidth = 51;
             this.productsDataGridView.RowTemplate.Height = 24;
-            this.productsDataGridView.Size = new System.Drawing.Size(519, 242);
+            this.productsDataGridView.Size = new System.Drawing.Size(519, 320);
             this.productsDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn9
@@ -371,9 +331,9 @@
             // 
             // btnAdditionsManage
             // 
-            this.btnAdditionsManage.Location = new System.Drawing.Point(306, 318);
+            this.btnAdditionsManage.Location = new System.Drawing.Point(300, 333);
             this.btnAdditionsManage.Name = "btnAdditionsManage";
-            this.btnAdditionsManage.Size = new System.Drawing.Size(130, 36);
+            this.btnAdditionsManage.Size = new System.Drawing.Size(170, 45);
             this.btnAdditionsManage.TabIndex = 3;
             this.btnAdditionsManage.Text = "Manage Table";
             this.btnAdditionsManage.UseVisualStyleBackColor = true;
@@ -391,43 +351,11 @@
             this.additionsDataGridView.DataSource = this.additionsBindingSource;
             this.additionsDataGridView.Location = new System.Drawing.Point(6, 6);
             this.additionsDataGridView.Name = "additionsDataGridView";
+            this.additionsDataGridView.RowHeadersVisible = false;
             this.additionsDataGridView.RowHeadersWidth = 51;
             this.additionsDataGridView.RowTemplate.Height = 24;
-            this.additionsDataGridView.Size = new System.Drawing.Size(746, 235);
+            this.additionsDataGridView.Size = new System.Drawing.Size(746, 320);
             this.additionsDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn15.HeaderText = "id";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "additionName";
-            this.dataGridViewTextBoxColumn16.HeaderText = "additionName";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "additionCount";
-            this.dataGridViewTextBoxColumn17.HeaderText = "additionCount";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn18.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 125;
             // 
             // additionsBindingSource
             // 
@@ -448,9 +376,9 @@
             // 
             // btnManageOrders
             // 
-            this.btnManageOrders.Location = new System.Drawing.Point(309, 311);
+            this.btnManageOrders.Location = new System.Drawing.Point(300, 333);
             this.btnManageOrders.Name = "btnManageOrders";
-            this.btnManageOrders.Size = new System.Drawing.Size(130, 36);
+            this.btnManageOrders.Size = new System.Drawing.Size(170, 45);
             this.btnManageOrders.TabIndex = 4;
             this.btnManageOrders.Text = "Manage Table";
             this.btnManageOrders.UseVisualStyleBackColor = true;
@@ -467,34 +395,11 @@
             this.user_OrderDataGridView.DataSource = this.user_OrderBindingSource;
             this.user_OrderDataGridView.Location = new System.Drawing.Point(6, 6);
             this.user_OrderDataGridView.Name = "user_OrderDataGridView";
+            this.user_OrderDataGridView.RowHeadersVisible = false;
             this.user_OrderDataGridView.RowHeadersWidth = 51;
             this.user_OrderDataGridView.RowTemplate.Height = 24;
-            this.user_OrderDataGridView.Size = new System.Drawing.Size(746, 251);
+            this.user_OrderDataGridView.Size = new System.Drawing.Size(746, 320);
             this.user_OrderDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "orderDate";
-            this.dataGridViewTextBoxColumn2.HeaderText = "orderDate";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "userName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "userName";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // tabPage5
             // 
@@ -508,20 +413,40 @@
             this.tabPage5.Text = "Order Info";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // order_CompositionDataGridView
             // 
-            this.button1.Location = new System.Drawing.Point(297, 307);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Manage Table";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.order_CompositionDataGridView.AutoGenerateColumns = false;
+            this.order_CompositionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.order_CompositionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23});
+            this.order_CompositionDataGridView.DataSource = this.order_CompositionBindingSource;
+            this.order_CompositionDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.order_CompositionDataGridView.Name = "order_CompositionDataGridView";
+            this.order_CompositionDataGridView.RowHeadersVisible = false;
+            this.order_CompositionDataGridView.RowHeadersWidth = 51;
+            this.order_CompositionDataGridView.RowTemplate.Height = 24;
+            this.order_CompositionDataGridView.Size = new System.Drawing.Size(746, 320);
+            this.order_CompositionDataGridView.TabIndex = 5;
             // 
             // order_CompositionBindingSource
             // 
             this.order_CompositionBindingSource.DataMember = "Order_Composition";
             this.order_CompositionBindingSource.DataSource = this.mugDBDataSet;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 45);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Manage Table";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // usersTableAdapter
             // 
@@ -539,24 +464,103 @@
             // 
             this.order_CompositionTableAdapter.ClearBeforeFill = true;
             // 
-            // order_CompositionDataGridView
+            // dataGridViewTextBoxColumn4
             // 
-            this.order_CompositionDataGridView.AutoGenerateColumns = false;
-            this.order_CompositionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.order_CompositionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
-            this.order_CompositionDataGridView.DataSource = this.order_CompositionBindingSource;
-            this.order_CompositionDataGridView.Location = new System.Drawing.Point(3, 6);
-            this.order_CompositionDataGridView.Name = "order_CompositionDataGridView";
-            this.order_CompositionDataGridView.RowHeadersWidth = 51;
-            this.order_CompositionDataGridView.RowTemplate.Height = 24;
-            this.order_CompositionDataGridView.Size = new System.Drawing.Size(752, 220);
-            this.order_CompositionDataGridView.TabIndex = 5;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "userName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "userName";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "userPassword";
+            this.dataGridViewTextBoxColumn6.HeaderText = "userPassword";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "adress";
+            this.dataGridViewTextBoxColumn7.HeaderText = "adress";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "userRole";
+            this.dataGridViewTextBoxColumn8.HeaderText = "userRole";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 118;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn15.HeaderText = "id";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 143;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "additionName";
+            this.dataGridViewTextBoxColumn16.HeaderText = "additionName";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "additionCount";
+            this.dataGridViewTextBoxColumn17.HeaderText = "additionCount";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn18.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 143;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "orderDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "orderDate";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "userName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "userName";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 300;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -564,7 +568,7 @@
             this.dataGridViewTextBoxColumn19.HeaderText = "id";
             this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 125;
+            this.dataGridViewTextBoxColumn19.Width = 118;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -632,8 +636,8 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderDataGridView)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,28 +654,16 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView user_OrderDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private MugDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.DataGridView usersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private MugDBDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.DataGridView productsDataGridView;
         private System.Windows.Forms.BindingSource additionsBindingSource;
         private MugDBDataSetTableAdapters.AdditionsTableAdapter additionsTableAdapter;
         private System.Windows.Forms.DataGridView additionsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.BindingSource order_CompositionBindingSource;
         private MugDBDataSetTableAdapters.Order_CompositionTableAdapter order_CompositionTableAdapter;
         private System.Windows.Forms.Button btnUserManage;
@@ -688,6 +680,18 @@
         private System.Windows.Forms.Button btnManageOrders;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView order_CompositionDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;

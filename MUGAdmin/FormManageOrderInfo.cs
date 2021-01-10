@@ -166,20 +166,27 @@ namespace MUGAdmin
 
         private void btnAddOrderInfo_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"insert into OrderComposition values(" +
-                $"(select id from UserOrder where id = {cbOrderAdd.Text}), " +
-                $"(select id from Products where productName = '{cbProductAdd.Text}'), " +
-                $"(select id from Additions where additionName = '{cbAdditionAdd.Text}'), " +
-                $"{tbCountAdd.Text});";
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+            if (cbUserAdd.Text != "" && cbProductAdd.Text != "" && cbAdditionAdd.Text != "" && tbCountAdd.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"insert into OrderComposition values(" +
+                    $"(select id from UserOrder where id = {cbOrderAdd.Text}), " +
+                    $"(select id from Products where productName = '{cbProductAdd.Text}'), " +
+                    $"(select id from Additions where additionName = '{cbAdditionAdd.Text}'), " +
+                    $"{tbCountAdd.Text});";
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
         }
 
         private void btnDeleteOrderInfo_Click(object sender, EventArgs e)
@@ -199,22 +206,29 @@ namespace MUGAdmin
 
         private void btnEditOrderInfo_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"UPDATE OrderComposition " +
-                $"SET " +
-                $"orderId = (select id from UserOrder where id = {cbOrderEdit.Text}), " +
-                $"productId = (select id from Products where productName = '{cbProductEdit.Text}'), " +
-                $"additionId = (select id from Additions where additionName = '{cbAdditionEdit.Text}'), " +
-                $"orderCount = {tbCountEdit.Text} " +
-                $"WHERE id = {cbIdEdit.Text};";
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+            if (cbUserEdit.Text != "" && cbProductEdit.Text != "" && cbAdditionEdit.Text != "" && tbCountEdit.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"UPDATE OrderComposition " +
+                    $"SET " +
+                    $"orderId = (select id from UserOrder where id = {cbOrderEdit.Text}), " +
+                    $"productId = (select id from Products where productName = '{cbProductEdit.Text}'), " +
+                    $"additionId = (select id from Additions where additionName = '{cbAdditionEdit.Text}'), " +
+                    $"orderCount = {tbCountEdit.Text} " +
+                    $"WHERE id = {cbIdEdit.Text};";
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
         }
 
         private void btnBackOrderInfoManage_Click(object sender, EventArgs e)
@@ -222,6 +236,30 @@ namespace MUGAdmin
             this.Close();
             FormMain formMain = new FormMain();
             formMain.Show();
+        }
+
+        private void tbCountAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCountDelete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCountEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -50,20 +50,27 @@ namespace MUGAdmin
 
         private void btnAddAddition_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"insert into Additions values(" +
-                $"'{tbAdditionNameAdd.Text}', " +
-                $"{tbAdditionCountAdd.Text}, " +
-                $"{tbCostAdd.Text});";
+            if (tbAdditionNameAdd.Text != "" && tbAdditionCountAdd.Text != "" && tbCostAdd.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"insert into Additions values(" +
+                    $"'{tbAdditionNameAdd.Text}', " +
+                    $"{tbAdditionCountAdd.Text}, " +
+                    $"{tbCostAdd.Text});";
 
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
         }
 
         private void btnBackAdditionManage_Click(object sender, EventArgs e)
@@ -99,18 +106,25 @@ namespace MUGAdmin
 
         private void btnEditAddition_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"UPDATE Additions " +
-                $"SET additionName = '{tbAdditionNameEdit.Text}', additionCount = {tbAdditionCountEdit.Text}, cost = {tbCostEdit.Text} " +
-                $"WHERE id = {cbIdEdit.Text};";
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+            if (tbAdditionNameEdit.Text != "" && tbAdditionCountEdit.Text != "" && tbCostEdit.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"UPDATE Additions " +
+                    $"SET additionName = '{tbAdditionNameEdit.Text}', additionCount = {tbAdditionCountEdit.Text}, cost = {tbCostEdit.Text} " +
+                    $"WHERE id = {cbIdEdit.Text};";
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }   
         }
 
         private void cbIdEdit_Click(object sender, EventArgs e)
@@ -150,6 +164,54 @@ namespace MUGAdmin
             this.Close();
             FormMain formMain = new FormMain();
             formMain.Show();
+        }
+
+        private void tbAdditionCountAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCostAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbAdditionCountDelete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCostDelete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbAdditionCountEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCostEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

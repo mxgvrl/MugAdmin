@@ -59,23 +59,44 @@ namespace MUGAdmin
             connection.Close();
         }
 
+        private void comboboxEditCombobox(string query, ComboBox cb)
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText = $"{query}";
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                cb.Text = dataReader[0].ToString();
+            }
+            connection.Close();
+        }
+
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"insert into Users values(" +
-                $"'{tbUserNameAdd.Text}', " +
-                $"'{tbUserPasswordAdd.Text}', " +
-                $"'{tbAdressAdd.Text}', " +
-                $"'{tbRoleAdd.Text}');";
+            if (tbUserNameAdd.Text != "" && tbUserPasswordAdd.Text != "" && tbAdressAdd.Text != "" && cbRoleAdd.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"insert into Users values(" +
+                    $"'{tbUserNameAdd.Text}', " +
+                    $"'{tbUserPasswordAdd.Text}', " +
+                    $"'{tbAdressAdd.Text}', " +
+                    $"'{cbRoleAdd.Text}');";
 
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
+
         }
 
         private void btnUserDelete_Click(object sender, EventArgs e)
@@ -121,23 +142,30 @@ namespace MUGAdmin
             comboboxEditFields($"select userName from Users where id = {cbIdEdit.Text}", tbUserNameEdit);
             comboboxEditFields($"select userPassword from Users where id = {cbIdEdit.Text}", tbUserPasswordEdit);
             comboboxEditFields($"select adress from Users where id = {cbIdEdit.Text}", tbAdressEdit);
-            comboboxEditFields($"select userRole from Users where id = {cbIdEdit.Text}", tbRoleEdit);
+            comboboxEditCombobox($"select userRole from Users where id = {cbIdEdit.Text}", cbRoleEdit);
         }
 
         private void btnUserEdit_Click(object sender, EventArgs e)
         {
-            var command = new SqlCommand();
-            command.CommandText = $"UPDATE Users " +
-                $"SET userName = '{tbUserNameEdit.Text}', userPassword = '{tbUserPasswordEdit.Text}', adress = '{tbAdressEdit.Text}', userRole = '{tbRoleEdit.Text}'" +
-                $"WHERE id = {cbIdEdit.Text};";                   
-            command.Connection = connection;
-            connection.Open();
-            command.ExecuteScalar();
-            connection.Close();
+            if (tbUserNameEdit.Text != "" && tbUserPasswordEdit.Text != "" && tbAdressEdit.Text != "" && cbRoleEdit.Text != "")
+            {
+                var command = new SqlCommand();
+                command.CommandText = $"UPDATE Users " +
+                    $"SET userName = '{tbUserNameEdit.Text}', userPassword = '{tbUserPasswordEdit.Text}', adress = '{tbAdressEdit.Text}', userRole = '{cbRoleEdit.Text}'" +
+                    $"WHERE id = {cbIdEdit.Text};";
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteScalar();
+                connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+                this.Close();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            } 
+            else
+            {
+                MessageBox.Show("Fill all fields");
+            }
         }
 
         private void cbIdDelete_Click(object sender, EventArgs e)

@@ -342,6 +342,7 @@
             this.tbCountEdit.Name = "tbCountEdit";
             this.tbCountEdit.Size = new System.Drawing.Size(178, 22);
             this.tbCountEdit.TabIndex = 33;
+            this.tbCountEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountEdit_KeyPress);
             // 
             // btnEditOrderInfo
             // 
@@ -438,6 +439,7 @@
             this.tbCountDelete.Name = "tbCountDelete";
             this.tbCountDelete.Size = new System.Drawing.Size(179, 22);
             this.tbCountDelete.TabIndex = 23;
+            this.tbCountDelete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountDelete_KeyPress);
             // 
             // btnDeleteOrderInfo
             // 
@@ -518,6 +520,7 @@
             this.tbCountAdd.Name = "tbCountAdd";
             this.tbCountAdd.Size = new System.Drawing.Size(174, 22);
             this.tbCountAdd.TabIndex = 20;
+            this.tbCountAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountAdd_KeyPress);
             // 
             // btnAddOrderInfo
             // 
