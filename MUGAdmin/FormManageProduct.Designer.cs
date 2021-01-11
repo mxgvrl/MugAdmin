@@ -614,6 +614,7 @@
             this.Controls.Add(this.btnBackUserManage);
             this.Name = "FormManageProduct";
             this.Text = "FormManageProduct";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageProduct_FormClosed);
             this.Load += new System.EventHandler(this.FormManageProduct_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -192,5 +192,12 @@ namespace MUGAdmin
             comboboxEditFields($"select adress from Users where id = {cbIdDelete.Text}", tbAdressDelete);
             comboboxEditFields($"select userRole from Users where id = {cbIdDelete.Text}", tbRoleDelete);
         }
+
+        private void FormManageUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            FormMain.currentForm = formMain.Name;
+        }
     }
 }

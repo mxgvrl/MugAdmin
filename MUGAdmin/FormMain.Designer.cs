@@ -36,10 +36,17 @@
             this.tableAdapterManager = new MUGAdmin.MugDBDataSetTableAdapters.TableAdapterManager();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnBackToLoginTab1 = new System.Windows.Forms.Button();
             this.btnUserManage = new System.Windows.Forms.Button();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBackToLoginTab2 = new System.Windows.Forms.Button();
             this.productImagePictureBox = new System.Windows.Forms.PictureBox();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnProductManage = new System.Windows.Forms.Button();
@@ -52,38 +59,36 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnBackToLoginTab3 = new System.Windows.Forms.Button();
             this.btnAdditionsManage = new System.Windows.Forms.Button();
             this.additionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.additionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnManageOrders = new System.Windows.Forms.Button();
-            this.user_OrderDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.order_CompositionDataGridView = new System.Windows.Forms.DataGridView();
-            this.order_CompositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.usersTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.UsersTableAdapter();
-            this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
-            this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
-            this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.additionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnBackToLoginTab4 = new System.Windows.Forms.Button();
+            this.btnManageOrders = new System.Windows.Forms.Button();
+            this.user_OrderDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnBackToLoginTab5 = new System.Windows.Forms.Button();
+            this.order_CompositionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_CompositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.usersTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.UsersTableAdapter();
+            this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
+            this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
+            this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
             productImageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).BeginInit();
@@ -154,6 +159,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnBackToLoginTab1);
             this.tabPage1.Controls.Add(this.btnUserManage);
             this.tabPage1.Controls.Add(this.usersDataGridView);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -163,6 +169,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Users";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLoginTab1
+            // 
+            this.btnBackToLoginTab1.Location = new System.Drawing.Point(6, 333);
+            this.btnBackToLoginTab1.Name = "btnBackToLoginTab1";
+            this.btnBackToLoginTab1.Size = new System.Drawing.Size(163, 45);
+            this.btnBackToLoginTab1.TabIndex = 2;
+            this.btnBackToLoginTab1.Text = "< Back";
+            this.btnBackToLoginTab1.UseVisualStyleBackColor = true;
+            this.btnBackToLoginTab1.Click += new System.EventHandler(this.btnBackToLogin_Click);
             // 
             // btnUserManage
             // 
@@ -193,6 +209,47 @@
             this.usersDataGridView.Size = new System.Drawing.Size(746, 320);
             this.usersDataGridView.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "userName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "userName";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "userPassword";
+            this.dataGridViewTextBoxColumn6.HeaderText = "userPassword";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "adress";
+            this.dataGridViewTextBoxColumn7.HeaderText = "adress";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "userRole";
+            this.dataGridViewTextBoxColumn8.HeaderText = "userRole";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 118;
+            // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
@@ -200,6 +257,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnBackToLoginTab2);
             this.tabPage2.Controls.Add(productImageLabel);
             this.tabPage2.Controls.Add(this.productImagePictureBox);
             this.tabPage2.Controls.Add(this.btnProductManage);
@@ -211,6 +269,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Products";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLoginTab2
+            // 
+            this.btnBackToLoginTab2.Location = new System.Drawing.Point(6, 333);
+            this.btnBackToLoginTab2.Name = "btnBackToLoginTab2";
+            this.btnBackToLoginTab2.Size = new System.Drawing.Size(163, 45);
+            this.btnBackToLoginTab2.TabIndex = 4;
+            this.btnBackToLoginTab2.Text = "< Back";
+            this.btnBackToLoginTab2.UseVisualStyleBackColor = true;
+            this.btnBackToLoginTab2.Click += new System.EventHandler(this.btnBackToLoginTab2_Click);
             // 
             // productImagePictureBox
             // 
@@ -319,6 +387,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnBackToLoginTab3);
             this.tabPage3.Controls.Add(this.btnAdditionsManage);
             this.tabPage3.Controls.Add(this.additionsDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -328,6 +397,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Additions";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLoginTab3
+            // 
+            this.btnBackToLoginTab3.Location = new System.Drawing.Point(6, 333);
+            this.btnBackToLoginTab3.Name = "btnBackToLoginTab3";
+            this.btnBackToLoginTab3.Size = new System.Drawing.Size(163, 45);
+            this.btnBackToLoginTab3.TabIndex = 4;
+            this.btnBackToLoginTab3.Text = "< Back";
+            this.btnBackToLoginTab3.UseVisualStyleBackColor = true;
+            this.btnBackToLoginTab3.Click += new System.EventHandler(this.btnBackToLoginTab3_Click);
             // 
             // btnAdditionsManage
             // 
@@ -356,154 +435,6 @@
             this.additionsDataGridView.RowTemplate.Height = 24;
             this.additionsDataGridView.Size = new System.Drawing.Size(746, 320);
             this.additionsDataGridView.TabIndex = 0;
-            // 
-            // additionsBindingSource
-            // 
-            this.additionsBindingSource.DataMember = "Additions";
-            this.additionsBindingSource.DataSource = this.mugDBDataSet;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.btnManageOrders);
-            this.tabPage4.Controls.Add(this.user_OrderDataGridView);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(758, 397);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Orders";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnManageOrders
-            // 
-            this.btnManageOrders.Location = new System.Drawing.Point(300, 333);
-            this.btnManageOrders.Name = "btnManageOrders";
-            this.btnManageOrders.Size = new System.Drawing.Size(170, 45);
-            this.btnManageOrders.TabIndex = 4;
-            this.btnManageOrders.Text = "Manage Table";
-            this.btnManageOrders.UseVisualStyleBackColor = true;
-            this.btnManageOrders.Click += new System.EventHandler(this.btnManageOrders_Click);
-            // 
-            // user_OrderDataGridView
-            // 
-            this.user_OrderDataGridView.AutoGenerateColumns = false;
-            this.user_OrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.user_OrderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.user_OrderDataGridView.DataSource = this.user_OrderBindingSource;
-            this.user_OrderDataGridView.Location = new System.Drawing.Point(6, 6);
-            this.user_OrderDataGridView.Name = "user_OrderDataGridView";
-            this.user_OrderDataGridView.RowHeadersVisible = false;
-            this.user_OrderDataGridView.RowHeadersWidth = 51;
-            this.user_OrderDataGridView.RowTemplate.Height = 24;
-            this.user_OrderDataGridView.Size = new System.Drawing.Size(746, 320);
-            this.user_OrderDataGridView.TabIndex = 2;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.order_CompositionDataGridView);
-            this.tabPage5.Controls.Add(this.button1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(758, 397);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Order Info";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // order_CompositionDataGridView
-            // 
-            this.order_CompositionDataGridView.AutoGenerateColumns = false;
-            this.order_CompositionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.order_CompositionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
-            this.order_CompositionDataGridView.DataSource = this.order_CompositionBindingSource;
-            this.order_CompositionDataGridView.Location = new System.Drawing.Point(6, 6);
-            this.order_CompositionDataGridView.Name = "order_CompositionDataGridView";
-            this.order_CompositionDataGridView.RowHeadersVisible = false;
-            this.order_CompositionDataGridView.RowHeadersWidth = 51;
-            this.order_CompositionDataGridView.RowTemplate.Height = 24;
-            this.order_CompositionDataGridView.Size = new System.Drawing.Size(746, 320);
-            this.order_CompositionDataGridView.TabIndex = 5;
-            // 
-            // order_CompositionBindingSource
-            // 
-            this.order_CompositionBindingSource.DataMember = "Order_Composition";
-            this.order_CompositionBindingSource.DataSource = this.mugDBDataSet;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(300, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Manage Table";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // additionsTableAdapter
-            // 
-            this.additionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // order_CompositionTableAdapter
-            // 
-            this.order_CompositionTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "userName";
-            this.dataGridViewTextBoxColumn5.HeaderText = "userName";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "userPassword";
-            this.dataGridViewTextBoxColumn6.HeaderText = "userPassword";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "adress";
-            this.dataGridViewTextBoxColumn7.HeaderText = "adress";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "userRole";
-            this.dataGridViewTextBoxColumn8.HeaderText = "userRole";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 118;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -538,6 +469,61 @@
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.Width = 200;
             // 
+            // additionsBindingSource
+            // 
+            this.additionsBindingSource.DataMember = "Additions";
+            this.additionsBindingSource.DataSource = this.mugDBDataSet;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnBackToLoginTab4);
+            this.tabPage4.Controls.Add(this.btnManageOrders);
+            this.tabPage4.Controls.Add(this.user_OrderDataGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(758, 397);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Orders";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLoginTab4
+            // 
+            this.btnBackToLoginTab4.Location = new System.Drawing.Point(6, 333);
+            this.btnBackToLoginTab4.Name = "btnBackToLoginTab4";
+            this.btnBackToLoginTab4.Size = new System.Drawing.Size(163, 45);
+            this.btnBackToLoginTab4.TabIndex = 5;
+            this.btnBackToLoginTab4.Text = "< Back";
+            this.btnBackToLoginTab4.UseVisualStyleBackColor = true;
+            this.btnBackToLoginTab4.Click += new System.EventHandler(this.btnBackToLoginTab4_Click);
+            // 
+            // btnManageOrders
+            // 
+            this.btnManageOrders.Location = new System.Drawing.Point(300, 333);
+            this.btnManageOrders.Name = "btnManageOrders";
+            this.btnManageOrders.Size = new System.Drawing.Size(170, 45);
+            this.btnManageOrders.TabIndex = 4;
+            this.btnManageOrders.Text = "Manage Table";
+            this.btnManageOrders.UseVisualStyleBackColor = true;
+            this.btnManageOrders.Click += new System.EventHandler(this.btnManageOrders_Click);
+            // 
+            // user_OrderDataGridView
+            // 
+            this.user_OrderDataGridView.AutoGenerateColumns = false;
+            this.user_OrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.user_OrderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.user_OrderDataGridView.DataSource = this.user_OrderBindingSource;
+            this.user_OrderDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.user_OrderDataGridView.Name = "user_OrderDataGridView";
+            this.user_OrderDataGridView.RowHeadersVisible = false;
+            this.user_OrderDataGridView.RowHeadersWidth = 51;
+            this.user_OrderDataGridView.RowTemplate.Height = 24;
+            this.user_OrderDataGridView.Size = new System.Drawing.Size(746, 320);
+            this.user_OrderDataGridView.TabIndex = 2;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
@@ -561,6 +547,49 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 300;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.btnBackToLoginTab5);
+            this.tabPage5.Controls.Add(this.order_CompositionDataGridView);
+            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(758, 397);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Order Info";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLoginTab5
+            // 
+            this.btnBackToLoginTab5.Location = new System.Drawing.Point(6, 333);
+            this.btnBackToLoginTab5.Name = "btnBackToLoginTab5";
+            this.btnBackToLoginTab5.Size = new System.Drawing.Size(163, 45);
+            this.btnBackToLoginTab5.TabIndex = 6;
+            this.btnBackToLoginTab5.Text = "< Back";
+            this.btnBackToLoginTab5.UseVisualStyleBackColor = true;
+            this.btnBackToLoginTab5.Click += new System.EventHandler(this.btnBackToLoginTab5_Click);
+            // 
+            // order_CompositionDataGridView
+            // 
+            this.order_CompositionDataGridView.AutoGenerateColumns = false;
+            this.order_CompositionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.order_CompositionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23});
+            this.order_CompositionDataGridView.DataSource = this.order_CompositionBindingSource;
+            this.order_CompositionDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.order_CompositionDataGridView.Name = "order_CompositionDataGridView";
+            this.order_CompositionDataGridView.RowHeadersVisible = false;
+            this.order_CompositionDataGridView.RowHeadersWidth = 51;
+            this.order_CompositionDataGridView.RowTemplate.Height = 24;
+            this.order_CompositionDataGridView.Size = new System.Drawing.Size(746, 320);
+            this.order_CompositionDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -610,6 +639,37 @@
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.Width = 125;
             // 
+            // order_CompositionBindingSource
+            // 
+            this.order_CompositionBindingSource.DataMember = "Order_Composition";
+            this.order_CompositionBindingSource.DataSource = this.mugDBDataSet;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 45);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Manage Table";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // additionsTableAdapter
+            // 
+            this.additionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // order_CompositionTableAdapter
+            // 
+            this.order_CompositionTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -618,6 +678,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormMain";
             this.Text = "MugAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).EndInit();
@@ -698,6 +759,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.Button btnBackToLoginTab1;
+        private System.Windows.Forms.Button btnBackToLoginTab2;
+        private System.Windows.Forms.Button btnBackToLoginTab3;
+        private System.Windows.Forms.Button btnBackToLoginTab4;
+        private System.Windows.Forms.Button btnBackToLoginTab5;
     }
 }
 

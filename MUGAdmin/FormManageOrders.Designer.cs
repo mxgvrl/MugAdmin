@@ -343,6 +343,7 @@
             this.Controls.Add(this.btnBackOrderManage);
             this.Name = "FormManageOrders";
             this.Text = "FormManageOrders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageOrders_FormClosed);
             this.Load += new System.EventHandler(this.FormManageOrders_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

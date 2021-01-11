@@ -213,5 +213,12 @@ namespace MUGAdmin
                 e.Handled = true;
             }
         }
+
+        private void FormManageAdditions_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            FormMain.currentForm = formMain.Name;
+        }
     }
 }

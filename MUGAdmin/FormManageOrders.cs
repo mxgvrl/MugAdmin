@@ -197,5 +197,12 @@ namespace MUGAdmin
             FormMain formMain = new FormMain();
             formMain.Show();
         }
+
+        private void FormManageOrders_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            FormMain.currentForm = formMain.Name;
+        }
     }
 }

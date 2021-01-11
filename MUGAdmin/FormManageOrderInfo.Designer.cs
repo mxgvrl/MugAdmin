@@ -568,6 +568,7 @@
             this.Controls.Add(this.btnBackOrderInfoManage);
             this.Name = "FormManageOrderInfo";
             this.Text = "FormManageOrderInfo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageOrderInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormManageOrderInfo_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -409,6 +409,7 @@
             this.Controls.Add(this.btnBackAdditionManage);
             this.Name = "FormManageAdditions";
             this.Text = "FormManageAdditions";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageAdditions_FormClosed);
             this.Load += new System.EventHandler(this.FormManageAdditions_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

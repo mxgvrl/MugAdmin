@@ -478,6 +478,7 @@
             this.Controls.Add(this.btnBackUserManage);
             this.Name = "FormManageUser";
             this.Text = "FormManageUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageUser_FormClosed);
             this.Load += new System.EventHandler(this.FormManageUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
