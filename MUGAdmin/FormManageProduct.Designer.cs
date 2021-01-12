@@ -48,17 +48,20 @@
             System.Windows.Forms.Label costLabel2;
             System.Windows.Forms.Label label2;
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbIdEdit = new System.Windows.Forms.ComboBox();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mugDBDataSet = new MUGAdmin.MugDBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpenFileUpdate = new System.Windows.Forms.Button();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mugDBDataSet = new MUGAdmin.MugDBDataSet();
             this.tbProductNameEdit = new System.Windows.Forms.TextBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbGradeEdit = new System.Windows.Forms.TextBox();
             this.tbVolumeEdit = new System.Windows.Forms.TextBox();
             this.tbCompositionEdit = new System.Windows.Forms.TextBox();
             this.tbCostEdit = new System.Windows.Forms.TextBox();
             this.btnProductEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbDelete = new System.Windows.Forms.ComboBox();
             this.tbGradeDelete = new System.Windows.Forms.TextBox();
             this.tbVolumeDelete = new System.Windows.Forms.TextBox();
             this.tbCompositionDelete = new System.Windows.Forms.TextBox();
@@ -73,14 +76,10 @@
             this.tbVolumeAdd = new System.Windows.Forms.TextBox();
             this.tbCompositionAdd = new System.Windows.Forms.TextBox();
             this.tbCostAdd = new System.Windows.Forms.TextBox();
-            this.btnBackUserManage = new System.Windows.Forms.Button();
             this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
             this.tableAdapterManager = new MUGAdmin.MugDBDataSetTableAdapters.TableAdapterManager();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.UsersTableAdapter();
-            this.cbDelete = new System.Windows.Forms.ComboBox();
-            this.cbIdEdit = new System.Windows.Forms.ComboBox();
             productNameLabel = new System.Windows.Forms.Label();
             productImageLabel = new System.Windows.Forms.Label();
             gradeLabel = new System.Windows.Forms.Label();
@@ -100,11 +99,11 @@
             costLabel2 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // productNameLabel
@@ -294,6 +293,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";
             // 
+            // cbIdEdit
+            // 
+            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
+            this.cbIdEdit.FormattingEnabled = true;
+            this.cbIdEdit.Location = new System.Drawing.Point(122, 40);
+            this.cbIdEdit.Name = "cbIdEdit";
+            this.cbIdEdit.Size = new System.Drawing.Size(193, 24);
+            this.cbIdEdit.TabIndex = 41;
+            this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
+            this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.mugDBDataSet;
+            // 
+            // mugDBDataSet
+            // 
+            this.mugDBDataSet.DataSetName = "MugDBDataSet";
+            this.mugDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -312,16 +332,6 @@
             this.btnOpenFileUpdate.UseVisualStyleBackColor = true;
             this.btnOpenFileUpdate.Click += new System.EventHandler(this.btnOpenFileUpdate_Click);
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.mugDBDataSet;
-            // 
-            // mugDBDataSet
-            // 
-            this.mugDBDataSet.DataSetName = "MugDBDataSet";
-            this.mugDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbProductNameEdit
             // 
             this.tbProductNameEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "productName", true));
@@ -329,6 +339,11 @@
             this.tbProductNameEdit.Name = "tbProductNameEdit";
             this.tbProductNameEdit.Size = new System.Drawing.Size(189, 22);
             this.tbProductNameEdit.TabIndex = 27;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.mugDBDataSet;
             // 
             // tbGradeEdit
             // 
@@ -393,6 +408,17 @@
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
+            // 
+            // cbDelete
+            // 
+            this.cbDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
+            this.cbDelete.FormattingEnabled = true;
+            this.cbDelete.Location = new System.Drawing.Point(116, 66);
+            this.cbDelete.Name = "cbDelete";
+            this.cbDelete.Size = new System.Drawing.Size(190, 24);
+            this.cbDelete.TabIndex = 28;
+            this.cbDelete.TextChanged += new System.EventHandler(this.cbIdDelete_TextChanged);
+            this.cbDelete.Click += new System.EventHandler(this.cbIdDelete_Click);
             // 
             // tbGradeDelete
             // 
@@ -533,16 +559,6 @@
             this.tbCostAdd.TabIndex = 24;
             this.tbCostAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCostAdd_KeyPress);
             // 
-            // btnBackUserManage
-            // 
-            this.btnBackUserManage.Location = new System.Drawing.Point(14, 361);
-            this.btnBackUserManage.Name = "btnBackUserManage";
-            this.btnBackUserManage.Size = new System.Drawing.Size(76, 30);
-            this.btnBackUserManage.TabIndex = 29;
-            this.btnBackUserManage.Text = "< Back";
-            this.btnBackUserManage.UseVisualStyleBackColor = true;
-            this.btnBackUserManage.Click += new System.EventHandler(this.btnBackUserManage_Click);
-            // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
@@ -561,59 +577,31 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.mugDBDataSet;
-            // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // cbDelete
-            // 
-            this.cbDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
-            this.cbDelete.FormattingEnabled = true;
-            this.cbDelete.Location = new System.Drawing.Point(116, 66);
-            this.cbDelete.Name = "cbDelete";
-            this.cbDelete.Size = new System.Drawing.Size(190, 24);
-            this.cbDelete.TabIndex = 28;
-            this.cbDelete.TextChanged += new System.EventHandler(this.cbIdDelete_TextChanged);
-            this.cbDelete.Click += new System.EventHandler(this.cbIdDelete_Click);
-            // 
-            // cbIdEdit
-            // 
-            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
-            this.cbIdEdit.FormattingEnabled = true;
-            this.cbIdEdit.Location = new System.Drawing.Point(122, 40);
-            this.cbIdEdit.Name = "cbIdEdit";
-            this.cbIdEdit.Size = new System.Drawing.Size(193, 24);
-            this.cbIdEdit.TabIndex = 41;
-            this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
-            this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
             // 
             // FormManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 406);
+            this.ClientSize = new System.Drawing.Size(1061, 360);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackUserManage);
             this.Name = "FormManageProduct";
             this.Text = "FormManageProduct";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageProduct_FormClosed);
             this.Load += new System.EventHandler(this.FormManageProduct_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -626,7 +614,6 @@
         private System.Windows.Forms.Button btnUserDelete;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button btnBackUserManage;
         private MugDBDataSet mugDBDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private MugDBDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;

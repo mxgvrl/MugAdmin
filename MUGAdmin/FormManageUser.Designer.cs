@@ -49,7 +49,6 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnUserDelete = new System.Windows.Forms.Button();
             this.btnUserEdit = new System.Windows.Forms.Button();
-            this.btnBackUserManage = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbRoleAdd = new System.Windows.Forms.ComboBox();
             this.tbAdressAdd = new System.Windows.Forms.TextBox();
@@ -61,11 +60,11 @@
             this.tbAdressDelete = new System.Windows.Forms.TextBox();
             this.tbRoleDelete = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbUserNameEdit = new System.Windows.Forms.TextBox();
             this.cbUserNameSearch = new System.Windows.Forms.ComboBox();
             this.cbRoleEdit = new System.Windows.Forms.ComboBox();
             this.tbAdressEdit = new System.Windows.Forms.TextBox();
             this.tbUserPasswordEdit = new System.Windows.Forms.TextBox();
-            this.tbUserNameEdit = new System.Windows.Forms.TextBox();
             userPasswordLabel1 = new System.Windows.Forms.Label();
             adressLabel1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -194,6 +193,15 @@
             userNameLabel1.TabIndex = 25;
             userNameLabel1.Text = "Search:";
             // 
+            // userNameLabel3
+            // 
+            userNameLabel3.AutoSize = true;
+            userNameLabel3.Location = new System.Drawing.Point(35, 66);
+            userNameLabel3.Name = "userNameLabel3";
+            userNameLabel3.Size = new System.Drawing.Size(81, 17);
+            userNameLabel3.TabIndex = 26;
+            userNameLabel3.Text = "user Name:";
+            // 
             // mugDBDataSet
             // 
             this.mugDBDataSet.DataSetName = "MugDBDataSet";
@@ -247,16 +255,6 @@
             this.btnUserEdit.Text = "Edit";
             this.btnUserEdit.UseVisualStyleBackColor = true;
             this.btnUserEdit.Click += new System.EventHandler(this.btnUserEdit_Click);
-            // 
-            // btnBackUserManage
-            // 
-            this.btnBackUserManage.Location = new System.Drawing.Point(19, 293);
-            this.btnBackUserManage.Name = "btnBackUserManage";
-            this.btnBackUserManage.Size = new System.Drawing.Size(76, 30);
-            this.btnBackUserManage.TabIndex = 25;
-            this.btnBackUserManage.Text = "< Back";
-            this.btnBackUserManage.UseVisualStyleBackColor = true;
-            this.btnBackUserManage.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -388,6 +386,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";
             // 
+            // tbUserNameEdit
+            // 
+            this.tbUserNameEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
+            this.tbUserNameEdit.Location = new System.Drawing.Point(146, 63);
+            this.tbUserNameEdit.Name = "tbUserNameEdit";
+            this.tbUserNameEdit.Size = new System.Drawing.Size(121, 22);
+            this.tbUserNameEdit.TabIndex = 27;
+            // 
             // cbUserNameSearch
             // 
             this.cbUserNameSearch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
@@ -427,32 +433,14 @@
             this.tbUserPasswordEdit.Size = new System.Drawing.Size(121, 22);
             this.tbUserPasswordEdit.TabIndex = 19;
             // 
-            // userNameLabel3
-            // 
-            userNameLabel3.AutoSize = true;
-            userNameLabel3.Location = new System.Drawing.Point(35, 66);
-            userNameLabel3.Name = "userNameLabel3";
-            userNameLabel3.Size = new System.Drawing.Size(81, 17);
-            userNameLabel3.TabIndex = 26;
-            userNameLabel3.Text = "user Name:";
-            // 
-            // tbUserNameEdit
-            // 
-            this.tbUserNameEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "userName", true));
-            this.tbUserNameEdit.Location = new System.Drawing.Point(146, 63);
-            this.tbUserNameEdit.Name = "tbUserNameEdit";
-            this.tbUserNameEdit.Size = new System.Drawing.Size(121, 22);
-            this.tbUserNameEdit.TabIndex = 27;
-            // 
             // FormManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 340);
+            this.ClientSize = new System.Drawing.Size(1003, 300);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackUserManage);
             this.Name = "FormManageUser";
             this.Text = "FormManageUser";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageUser_FormClosed);
@@ -478,7 +466,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnUserDelete;
         private System.Windows.Forms.Button btnUserEdit;
-        private System.Windows.Forms.Button btnBackUserManage;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

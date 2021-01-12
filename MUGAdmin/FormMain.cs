@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+using _app = Microsoft.Office.Interop.Excel.Application;
 
 namespace MUGAdmin
 {
@@ -109,7 +111,7 @@ namespace MUGAdmin
         {
             if (currentForm == this.Name)
             {
-                Application.Exit();
+                System.Windows.Forms.Application.Exit();
             }
         }
 
@@ -146,6 +148,39 @@ namespace MUGAdmin
             FormMain formMain = new FormMain();
             formMain.Show();
             currentForm = this.Name;
+        }
+
+        private void Report_Click(object sender, EventArgs e)
+        {
+            _app ExcelApp = new _app();
+            ExcelApp.Workbooks.Add(Type.Missing);
+            Worksheet sheet = (Worksheet)ExcelApp.Sheets[1];
+            connection.Open();
+            SqlCommand command = new SqlCommand($"select UserOrder.orderDate, count(UserOrder.orderDate) from UserOrder  group by orderDate;", connection);
+            var reader = command.ExecuteReader();
+            int i = 1;
+            while (reader.Read())
+            {
+                sheet.Cells[i, 1] = reader.GetValue(0).ToString().Trim();
+                sheet.Cells[i, 2] = reader.GetValue(1).ToString().Trim();
+                i++;
+            }
+            reader.Close();
+            connection.Close();
+            ChartObjects xlCharts = (ChartObjects)sheet.ChartObjects(Type.Missing);
+            ChartObject myChart = (ChartObject)xlCharts.Add(110, 0, 350, 250);
+            var chart = myChart.Chart;
+            var seriesCollection = (SeriesCollection)chart.SeriesCollection(Type.Missing);
+            Series series = seriesCollection.NewSeries();
+            series.XValues = sheet.get_Range("A1", "A" + (i - 1) + "");
+            series.Values = sheet.get_Range("B1", "B" + (i - 1) + "");
+            chart.ChartType = XlChartType.xlXYScatterSmooth;
+            chart.ApplyDataLabels(
+            Microsoft.Office.Interop.Excel.XlDataLabelsType.xlDataLabelsShowLabel,
+            false, true, false, false, true, false, false,
+            true, true);
+
+            ExcelApp.Visible = true;
         }
     }
 }

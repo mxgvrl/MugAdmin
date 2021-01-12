@@ -66,14 +66,16 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.additionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.user_OrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnBackToLoginTab4 = new System.Windows.Forms.Button();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.user_OrderDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_OrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbOrderId = new System.Windows.Forms.ComboBox();
+            this.btnTakeOrder = new System.Windows.Forms.Button();
             this.order_CompositionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,8 +92,7 @@
             this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
             this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
             this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
-            this.cbOrderId = new System.Windows.Forms.ComboBox();
-            this.btnTakeOrder = new System.Windows.Forms.Button();
+            this.Report = new System.Windows.Forms.Button();
             productImageLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -107,8 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.additionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.additionsBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).BeginInit();
@@ -122,6 +123,15 @@
             productImageLabel.Size = new System.Drawing.Size(102, 17);
             productImageLabel.TabIndex = 2;
             productImageLabel.Text = "product Image:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(535, 347);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(63, 17);
+            idLabel.TabIndex = 10;
+            idLabel.Text = "Order №";
             // 
             // tabControl1
             // 
@@ -461,6 +471,7 @@
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.Report);
             this.tabPage4.Controls.Add(this.btnBackToLoginTab4);
             this.tabPage4.Controls.Add(this.btnManageOrders);
             this.tabPage4.Controls.Add(this.user_OrderDataGridView);
@@ -471,11 +482,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Orders";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // user_OrderBindingSource
-            // 
-            this.user_OrderBindingSource.DataMember = "User_Order";
-            this.user_OrderBindingSource.DataSource = this.mugDBDataSet;
             // 
             // btnBackToLoginTab4
             // 
@@ -538,6 +544,11 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 300;
             // 
+            // user_OrderBindingSource
+            // 
+            this.user_OrderBindingSource.DataMember = "User_Order";
+            this.user_OrderBindingSource.DataSource = this.mugDBDataSet;
+            // 
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
@@ -554,6 +565,26 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Order Info";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cbOrderId
+            // 
+            this.cbOrderId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "id", true));
+            this.cbOrderId.FormattingEnabled = true;
+            this.cbOrderId.Location = new System.Drawing.Point(604, 344);
+            this.cbOrderId.Name = "cbOrderId";
+            this.cbOrderId.Size = new System.Drawing.Size(61, 24);
+            this.cbOrderId.TabIndex = 12;
+            this.cbOrderId.Click += new System.EventHandler(this.idComboBox_Click);
+            // 
+            // btnTakeOrder
+            // 
+            this.btnTakeOrder.Location = new System.Drawing.Point(671, 333);
+            this.btnTakeOrder.Name = "btnTakeOrder";
+            this.btnTakeOrder.Size = new System.Drawing.Size(81, 45);
+            this.btnTakeOrder.TabIndex = 11;
+            this.btnTakeOrder.Text = "Done";
+            this.btnTakeOrder.UseVisualStyleBackColor = true;
+            this.btnTakeOrder.Click += new System.EventHandler(this.btnTakeOrder_Click);
             // 
             // order_CompositionDataGridView
             // 
@@ -678,34 +709,15 @@
             // 
             this.order_CompositionTableAdapter.ClearBeforeFill = true;
             // 
-            // idLabel
+            // Report
             // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(535, 347);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(63, 17);
-            idLabel.TabIndex = 10;
-            idLabel.Text = "Order №";
-            // 
-            // cbOrderId
-            // 
-            this.cbOrderId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "id", true));
-            this.cbOrderId.FormattingEnabled = true;
-            this.cbOrderId.Location = new System.Drawing.Point(604, 344);
-            this.cbOrderId.Name = "cbOrderId";
-            this.cbOrderId.Size = new System.Drawing.Size(61, 24);
-            this.cbOrderId.TabIndex = 12;
-            this.cbOrderId.Click += new System.EventHandler(this.idComboBox_Click);
-            // 
-            // btnTakeOrder
-            // 
-            this.btnTakeOrder.Location = new System.Drawing.Point(671, 333);
-            this.btnTakeOrder.Name = "btnTakeOrder";
-            this.btnTakeOrder.Size = new System.Drawing.Size(81, 45);
-            this.btnTakeOrder.TabIndex = 11;
-            this.btnTakeOrder.Text = "Done";
-            this.btnTakeOrder.UseVisualStyleBackColor = true;
-            this.btnTakeOrder.Click += new System.EventHandler(this.btnTakeOrder_Click);
+            this.Report.Location = new System.Drawing.Point(625, 344);
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(75, 23);
+            this.Report.TabIndex = 6;
+            this.Report.Text = "button2";
+            this.Report.UseVisualStyleBackColor = true;
+            this.Report.Click += new System.EventHandler(this.Report_Click);
             // 
             // FormMain
             // 
@@ -731,8 +743,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.additionsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.additionsBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).EndInit();
@@ -804,6 +816,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.ComboBox cbOrderId;
         private System.Windows.Forms.Button btnTakeOrder;
+        private System.Windows.Forms.Button Report;
     }
 }
 
