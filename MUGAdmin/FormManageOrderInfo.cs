@@ -152,7 +152,7 @@ namespace MUGAdmin
             comboboxEditCombobox($"select userName from Users where id = (select userId from UserOrder where id = {cbOrderDelete.Text}) ", cbUserDelete);
             comboboxEditCombobox($"select productName from Products where id = (select productId from OrderComposition where id = {cbIdDelete.Text}) ", cbProductDelete);
             comboboxEditCombobox($"select additionName from Additions where id = (select additionId from OrderComposition where id = {cbIdDelete.Text}) ", cbAdditionDelete);
-            comboboxEditFields($"select orderCount from OrderComposition where id = {cbIdDelete.Text} ", tbCountDelete);
+            comboboxEditCombobox($"select isDone from OrderComposition where id = {cbIdDelete.Text} ", cbIsDoneDelete);
         }
 
         private void cbIdEdit_TextChanged(object sender, EventArgs e)
@@ -161,27 +161,25 @@ namespace MUGAdmin
             comboboxEditCombobox($"select userName from Users where id = (select userId from UserOrder where id = {cbOrderEdit.Text}) ", cbUserEdit);
             comboboxEditCombobox($"select productName from Products where id = (select productId from OrderComposition where id = {cbIdEdit.Text}) ", cbProductEdit);
             comboboxEditCombobox($"select additionName from Additions where id = (select additionId from OrderComposition where id = {cbIdEdit.Text}) ", cbAdditionEdit);
-            comboboxEditFields($"select orderCount from OrderComposition where id = {cbIdEdit.Text} ", tbCountEdit);
+            comboboxEditCombobox($"select isDone from OrderComposition where id = {cbIdEdit.Text} ", cbIsDoneEdit);
         }
 
         private void btnAddOrderInfo_Click(object sender, EventArgs e)
         {
-            if (cbUserAdd.Text != "" && cbProductAdd.Text != "" && cbAdditionAdd.Text != "" && tbCountAdd.Text != "")
+            if (cbUserAdd.Text != "" && cbProductAdd.Text != "" && cbAdditionAdd.Text != "" && cbIsDoneAdd.Text != "")
             {
                 var command = new SqlCommand();
                 command.CommandText = $"insert into OrderComposition values(" +
                     $"(select id from UserOrder where id = {cbOrderAdd.Text}), " +
                     $"(select id from Products where productName = '{cbProductAdd.Text}'), " +
                     $"(select id from Additions where additionName = '{cbAdditionAdd.Text}'), " +
-                    $"{tbCountAdd.Text});";
+                    $"'{cbIsDoneAdd.Text}');";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Added succesfully");
             }
             else
             {
@@ -199,14 +197,12 @@ namespace MUGAdmin
             command.ExecuteScalar();
             connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+            MessageBox.Show("Deleted succesfully");
         }
 
         private void btnEditOrderInfo_Click(object sender, EventArgs e)
         {
-            if (cbUserEdit.Text != "" && cbProductEdit.Text != "" && cbAdditionEdit.Text != "" && tbCountEdit.Text != "")
+            if (cbUserEdit.Text != "" && cbProductEdit.Text != "" && cbAdditionEdit.Text != "" && cbIsDoneEdit.Text != "")
             {
                 var command = new SqlCommand();
                 command.CommandText = $"UPDATE OrderComposition " +
@@ -214,16 +210,14 @@ namespace MUGAdmin
                     $"orderId = (select id from UserOrder where id = {cbOrderEdit.Text}), " +
                     $"productId = (select id from Products where productName = '{cbProductEdit.Text}'), " +
                     $"additionId = (select id from Additions where additionName = '{cbAdditionEdit.Text}'), " +
-                    $"orderCount = {tbCountEdit.Text} " +
+                    $"isDone = '{cbIsDoneEdit.Text}' " +
                     $"WHERE id = {cbIdEdit.Text};";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Edited succesfully");
             }
             else
             {

@@ -34,13 +34,13 @@ namespace MUGAdmin
 
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select id from Users;";
+            command.CommandText = $"select userName from Users;";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
                 for (var i = 0; i < dataReader.FieldCount; i++)
                 {
-                    cbIdDelete.Items.Add(dataReader[i].ToString());
+                    cbUserNameDelete.Items.Add(dataReader[i].ToString());
                 }
             }
             connection.Close();
@@ -88,9 +88,7 @@ namespace MUGAdmin
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Added succesfully");
             }
             else
             {
@@ -102,32 +100,13 @@ namespace MUGAdmin
         private void btnUserDelete_Click(object sender, EventArgs e)
         {
             var command = new SqlCommand();
-            command.CommandText = $"delete from Users where Users.id = {cbIdDelete.Text};";
+            command.CommandText = $"delete from Users where Users.userName = '{cbUserNameDelete.Text}';";
             command.Connection = connection;
             connection.Open();
             command.ExecuteScalar();
             connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
-        }
-
-        private void cbIdEdit_Click(object sender, EventArgs e)
-        {
-            cbIdEdit.Items.Clear();
-            connection.Open();
-            var command1 = connection.CreateCommand();
-            command1.CommandText = $"select id from Users;";
-            var dataReader1 = command1.ExecuteReader();
-            while (dataReader1.Read())
-            {
-                for (var i = 0; i < dataReader1.FieldCount; i++)
-                {
-                    cbIdEdit.Items.Add(dataReader1[i].ToString());
-                }
-            }
-            connection.Close();
+            MessageBox.Show("Deleted succesfully");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -137,12 +116,61 @@ namespace MUGAdmin
             formMain.Show();
         }
 
-        private void cbIdEdit_TextChanged(object sender, EventArgs e)
+        
+        private void FormManageUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            comboboxEditFields($"select userName from Users where id = {cbIdEdit.Text}", tbUserNameEdit);
-            comboboxEditFields($"select userPassword from Users where id = {cbIdEdit.Text}", tbUserPasswordEdit);
-            comboboxEditFields($"select adress from Users where id = {cbIdEdit.Text}", tbAdressEdit);
-            comboboxEditCombobox($"select userRole from Users where id = {cbIdEdit.Text}", cbRoleEdit);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            FormMain.currentForm = formMain.Name;
+        }
+
+        private void cbUserNameDelete_Click(object sender, EventArgs e)
+        {
+            cbUserNameDelete.Items.Clear();
+            connection.Open();
+            var command1 = connection.CreateCommand();
+            command1.CommandText = $"select userName from Users;";
+            var dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                for (var i = 0; i < dataReader1.FieldCount; i++)
+                {
+                    cbUserNameDelete.Items.Add(dataReader1[i].ToString());
+                }
+            }
+            connection.Close();
+        }
+
+        private void cbUserNameDelete_TextChanged(object sender, EventArgs e)
+        {
+            comboboxEditFields($"select userPassword from Users where userName = '{cbUserNameDelete.Text}'", tbUserPasswordDelete);
+            comboboxEditFields($"select adress from Users where userName = '{cbUserNameDelete.Text}'", tbAdressDelete);
+            comboboxEditFields($"select userRole from Users where userName = '{cbUserNameDelete.Text}'", tbRoleDelete);
+        }
+
+        private void сbUserNameEdit_Click(object sender, EventArgs e)
+        {
+            cbUserNameSearch.Items.Clear();
+            connection.Open();
+            var command1 = connection.CreateCommand();
+            command1.CommandText = $"select userName from Users;";
+            var dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                for (var i = 0; i < dataReader1.FieldCount; i++)
+                {
+                    cbUserNameSearch.Items.Add(dataReader1[i].ToString());
+                }
+            }
+            connection.Close();
+        }
+
+        private void сbUserNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            comboboxEditFields($"select userName from Users where userName = '{cbUserNameSearch.Text}'", tbUserNameEdit);
+            comboboxEditFields($"select userPassword from Users where userName = '{cbUserNameSearch.Text}'", tbUserPasswordEdit);
+            comboboxEditFields($"select adress from Users where userName = '{cbUserNameSearch.Text}'", tbAdressEdit);
+            comboboxEditCombobox($"select userRole from Users where userName = '{cbUserNameSearch.Text}'", cbRoleEdit);
         }
 
         private void btnUserEdit_Click(object sender, EventArgs e)
@@ -152,52 +180,19 @@ namespace MUGAdmin
                 var command = new SqlCommand();
                 command.CommandText = $"UPDATE Users " +
                     $"SET userName = '{tbUserNameEdit.Text}', userPassword = '{tbUserPasswordEdit.Text}', adress = '{tbAdressEdit.Text}', userRole = '{cbRoleEdit.Text}'" +
-                    $"WHERE id = {cbIdEdit.Text};";
+                    $"WHERE userName = {cbUserNameSearch.Text};";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
-            } 
+                MessageBox.Show("Edited succesfully");
+            }
             else
             {
                 MessageBox.Show("Fill all fields");
             }
         }
 
-        private void cbIdDelete_Click(object sender, EventArgs e)
-        {
-            cbIdDelete.Items.Clear();
-            connection.Open();
-            var command1 = connection.CreateCommand();
-            command1.CommandText = $"select id from Users;";
-            var dataReader1 = command1.ExecuteReader();
-            while (dataReader1.Read())
-            {
-                for (var i = 0; i < dataReader1.FieldCount; i++)
-                {
-                    cbIdDelete.Items.Add(dataReader1[i].ToString());
-                }
-            }
-            connection.Close();
-        }
-
-        private void cbIdDelete_TextChanged(object sender, EventArgs e)
-        {
-            comboboxEditFields($"select userName from Users where id = {cbIdDelete.Text}", tbUserNameDelete);
-            comboboxEditFields($"select userPassword from Users where id = {cbIdDelete.Text}", tbUserPasswordDelete);
-            comboboxEditFields($"select adress from Users where id = {cbIdDelete.Text}", tbAdressDelete);
-            comboboxEditFields($"select userRole from Users where id = {cbIdDelete.Text}", tbRoleDelete);
-        }
-
-        private void FormManageUser_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            FormMain.currentForm = formMain.Name;
-        }
     }
 }

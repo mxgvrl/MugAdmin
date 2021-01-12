@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace MUGAdmin
 {
     public partial class FormMain : Form
     {
-        public static string currentForm = "";
+        public static string currentForm = "FormMain";
+        public SqlConnection connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=MugDB;Integrated Security=True");
+
         public FormMain()
         {
             InitializeComponent();
@@ -108,6 +111,41 @@ namespace MUGAdmin
             {
                 Application.Exit();
             }
+        }
+
+        private void idComboBox_Click(object sender, EventArgs e)
+        {
+            cbOrderId.Items.Clear();
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText = $"select id from OrderComposition";
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                for (var i = 0; i < dataReader.FieldCount; i++)
+                {
+                    cbOrderId.Items.Add(dataReader[i].ToString());
+                }
+            }
+            connection.Close();
+        }
+
+        private void btnTakeOrder_Click(object sender, EventArgs e)
+        {
+            var command = new SqlCommand();
+            command.CommandText = $"update OrderComposition set isDone = 'Done' " +
+                $"where id = {cbOrderId.Text};";
+
+            command.Connection = connection;
+            connection.Open();
+            command.ExecuteScalar();
+            connection.Close();
+
+            currentForm = "FormManageOrderInfo";
+            this.Close();
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            currentForm = this.Name;
         }
     }
 }

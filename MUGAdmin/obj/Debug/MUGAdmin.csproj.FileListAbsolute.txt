@@ -30,3 +30,4 @@ D:\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.exe
 D:\MUGAdmin\MUGAdmin\bin\Debug\MUGAdmin.pdb
 D:\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormManageOrderInfo.resources
 D:\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormSignUp.resources
+D:\MUGAdmin\MUGAdmin\obj\Debug\MUGAdmin.FormTakeOrder.resources

@@ -32,14 +32,14 @@
             System.Windows.Forms.Label additionNameLabel;
             System.Windows.Forms.Label additionCountLabel;
             System.Windows.Forms.Label costLabel;
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label additionNameLabel1;
             System.Windows.Forms.Label additionCountLabel1;
             System.Windows.Forms.Label costLabel1;
-            System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label additionNameLabel2;
             System.Windows.Forms.Label additionCountLabel2;
             System.Windows.Forms.Label costLabel2;
+            System.Windows.Forms.Label additionNameLabel3;
+            System.Windows.Forms.Label label1;
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbIdEdit = new System.Windows.Forms.ComboBox();
             this.additionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,20 +59,19 @@
             this.tbAdditionCountAdd = new System.Windows.Forms.TextBox();
             this.tbCostAdd = new System.Windows.Forms.TextBox();
             this.btnAddAddition = new System.Windows.Forms.Button();
-            this.btnBackAdditionManage = new System.Windows.Forms.Button();
             this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
             this.tableAdapterManager = new MUGAdmin.MugDBDataSetTableAdapters.TableAdapterManager();
             additionNameLabel = new System.Windows.Forms.Label();
             additionCountLabel = new System.Windows.Forms.Label();
             costLabel = new System.Windows.Forms.Label();
-            idLabel = new System.Windows.Forms.Label();
             additionNameLabel1 = new System.Windows.Forms.Label();
             additionCountLabel1 = new System.Windows.Forms.Label();
             costLabel1 = new System.Windows.Forms.Label();
-            idLabel1 = new System.Windows.Forms.Label();
             additionNameLabel2 = new System.Windows.Forms.Label();
             additionCountLabel2 = new System.Windows.Forms.Label();
             costLabel2 = new System.Windows.Forms.Label();
+            additionNameLabel3 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.additionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
@@ -107,15 +106,6 @@
             costLabel.TabIndex = 17;
             costLabel.Text = "cost:";
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(24, 46);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(23, 17);
-            idLabel.TabIndex = 14;
-            idLabel.Text = "id:";
-            // 
             // additionNameLabel1
             // 
             additionNameLabel1.AutoSize = true;
@@ -142,15 +132,6 @@
             costLabel1.Size = new System.Drawing.Size(38, 17);
             costLabel1.TabIndex = 20;
             costLabel1.Text = "cost:";
-            // 
-            // idLabel1
-            // 
-            idLabel1.AutoSize = true;
-            idLabel1.Location = new System.Drawing.Point(35, 46);
-            idLabel1.Name = "idLabel1";
-            idLabel1.Size = new System.Drawing.Size(23, 17);
-            idLabel1.TabIndex = 24;
-            idLabel1.Text = "id:";
             // 
             // additionNameLabel2
             // 
@@ -179,9 +160,27 @@
             costLabel2.TabIndex = 30;
             costLabel2.Text = "cost:";
             // 
+            // additionNameLabel3
+            // 
+            additionNameLabel3.AutoSize = true;
+            additionNameLabel3.Location = new System.Drawing.Point(22, 49);
+            additionNameLabel3.Name = "additionNameLabel3";
+            additionNameLabel3.Size = new System.Drawing.Size(57, 17);
+            additionNameLabel3.TabIndex = 21;
+            additionNameLabel3.Text = "Search:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(35, 46);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(57, 17);
+            label1.TabIndex = 33;
+            label1.Text = "Search:";
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(idLabel1);
+            this.groupBox3.Controls.Add(label1);
             this.groupBox3.Controls.Add(this.cbIdEdit);
             this.groupBox3.Controls.Add(additionNameLabel2);
             this.groupBox3.Controls.Add(this.tbAdditionNameEdit);
@@ -192,19 +191,19 @@
             this.groupBox3.Controls.Add(this.btnEditAddition);
             this.groupBox3.Location = new System.Drawing.Point(671, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(314, 251);
+            this.groupBox3.Size = new System.Drawing.Size(336, 251);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";
             // 
             // cbIdEdit
             // 
-            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.additionsBindingSource, "id", true));
+            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.additionsBindingSource, "additionName", true));
             this.cbIdEdit.FormattingEnabled = true;
             this.cbIdEdit.Location = new System.Drawing.Point(144, 43);
             this.cbIdEdit.Name = "cbIdEdit";
             this.cbIdEdit.Size = new System.Drawing.Size(136, 24);
-            this.cbIdEdit.TabIndex = 25;
+            this.cbIdEdit.TabIndex = 32;
             this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
             this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
             // 
@@ -256,7 +255,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(idLabel);
+            this.groupBox2.Controls.Add(additionNameLabel3);
             this.groupBox2.Controls.Add(this.cbIdDelete);
             this.groupBox2.Controls.Add(additionNameLabel1);
             this.groupBox2.Controls.Add(this.tbAdditionNameDelete);
@@ -267,19 +266,19 @@
             this.groupBox2.Controls.Add(this.btnDeleteAddition);
             this.groupBox2.Location = new System.Drawing.Point(354, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(298, 251);
+            this.groupBox2.Size = new System.Drawing.Size(300, 251);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
             // 
             // cbIdDelete
             // 
-            this.cbIdDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.additionsBindingSource, "id", true));
+            this.cbIdDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.additionsBindingSource, "additionName", true));
             this.cbIdDelete.FormattingEnabled = true;
-            this.cbIdDelete.Location = new System.Drawing.Point(133, 43);
+            this.cbIdDelete.Location = new System.Drawing.Point(133, 44);
             this.cbIdDelete.Name = "cbIdDelete";
             this.cbIdDelete.Size = new System.Drawing.Size(147, 24);
-            this.cbIdDelete.TabIndex = 15;
+            this.cbIdDelete.TabIndex = 22;
             this.cbIdDelete.TextChanged += new System.EventHandler(this.cbIdDelete_TextChanged);
             this.cbIdDelete.Click += new System.EventHandler(this.cbIdDelete_Click);
             // 
@@ -374,16 +373,6 @@
             this.btnAddAddition.UseVisualStyleBackColor = true;
             this.btnAddAddition.Click += new System.EventHandler(this.btnAddAddition_Click);
             // 
-            // btnBackAdditionManage
-            // 
-            this.btnBackAdditionManage.Location = new System.Drawing.Point(13, 274);
-            this.btnBackAdditionManage.Name = "btnBackAdditionManage";
-            this.btnBackAdditionManage.Size = new System.Drawing.Size(76, 30);
-            this.btnBackAdditionManage.TabIndex = 29;
-            this.btnBackAdditionManage.Text = "< Back";
-            this.btnBackAdditionManage.UseVisualStyleBackColor = true;
-            this.btnBackAdditionManage.Click += new System.EventHandler(this.btnBackAdditionManage_Click);
-            // 
             // additionsTableAdapter
             // 
             this.additionsTableAdapter.ClearBeforeFill = true;
@@ -402,11 +391,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 321);
+            this.ClientSize = new System.Drawing.Size(1007, 273);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackAdditionManage);
             this.Name = "FormManageAdditions";
             this.Text = "FormManageAdditions";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageAdditions_FormClosed);
@@ -431,21 +419,20 @@
         private System.Windows.Forms.Button btnDeleteAddition;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddAddition;
-        private System.Windows.Forms.Button btnBackAdditionManage;
         private MugDBDataSet mugDBDataSet;
         private System.Windows.Forms.BindingSource additionsBindingSource;
         private MugDBDataSetTableAdapters.AdditionsTableAdapter additionsTableAdapter;
         private MugDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox cbIdEdit;
         private System.Windows.Forms.TextBox tbAdditionNameEdit;
         private System.Windows.Forms.TextBox tbAdditionCountEdit;
         private System.Windows.Forms.TextBox tbCostEdit;
-        private System.Windows.Forms.ComboBox cbIdDelete;
         private System.Windows.Forms.TextBox tbAdditionNameDelete;
         private System.Windows.Forms.TextBox tbAdditionCountDelete;
         private System.Windows.Forms.TextBox tbCostDelete;
         private System.Windows.Forms.TextBox tbAdditionNameAdd;
         private System.Windows.Forms.TextBox tbAdditionCountAdd;
         private System.Windows.Forms.TextBox tbCostAdd;
+        private System.Windows.Forms.ComboBox cbIdDelete;
+        private System.Windows.Forms.ComboBox cbIdEdit;
     }
 }

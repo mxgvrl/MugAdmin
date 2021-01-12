@@ -525,9 +525,9 @@ namespace MUGAdmin {
             
             private global::System.Data.DataColumn columnadditionName;
             
-            private global::System.Data.DataColumn columnorderCount;
-            
             private global::System.Data.DataColumn columnorderId;
+            
+            private global::System.Data.DataColumn columnisDone;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -596,17 +596,17 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn orderCountColumn {
+            public global::System.Data.DataColumn orderIdColumn {
                 get {
-                    return this.columnorderCount;
+                    return this.columnorderId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn orderIdColumn {
+            public global::System.Data.DataColumn isDoneColumn {
                 get {
-                    return this.columnorderId;
+                    return this.columnisDone;
                 }
             }
             
@@ -647,15 +647,15 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Order_CompositionRow AddOrder_CompositionRow(int id, string userName, string productName, string additionName, int orderCount, int orderId) {
+            public Order_CompositionRow AddOrder_CompositionRow(int id, string userName, string productName, string additionName, int orderId, string isDone) {
                 Order_CompositionRow rowOrder_CompositionRow = ((Order_CompositionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         userName,
                         productName,
                         additionName,
-                        orderCount,
-                        orderId};
+                        orderId,
+                        isDone};
                 rowOrder_CompositionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrder_CompositionRow);
                 return rowOrder_CompositionRow;
@@ -689,8 +689,8 @@ namespace MUGAdmin {
                 this.columnuserName = base.Columns["userName"];
                 this.columnproductName = base.Columns["productName"];
                 this.columnadditionName = base.Columns["additionName"];
-                this.columnorderCount = base.Columns["orderCount"];
                 this.columnorderId = base.Columns["orderId"];
+                this.columnisDone = base.Columns["isDone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -704,10 +704,10 @@ namespace MUGAdmin {
                 base.Columns.Add(this.columnproductName);
                 this.columnadditionName = new global::System.Data.DataColumn("additionName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnadditionName);
-                this.columnorderCount = new global::System.Data.DataColumn("orderCount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorderCount);
                 this.columnorderId = new global::System.Data.DataColumn("orderId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnorderId);
+                this.columnisDone = new global::System.Data.DataColumn("isDone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDone);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -716,6 +716,7 @@ namespace MUGAdmin {
                 this.columnproductName.MaxLength = 2147483647;
                 this.columnadditionName.MaxLength = 2147483647;
                 this.columnorderId.AllowDBNull = false;
+                this.columnisDone.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1162,7 +1163,7 @@ namespace MUGAdmin {
             
             private global::System.Data.DataColumn columnadditionId;
             
-            private global::System.Data.DataColumn columnorderCount;
+            private global::System.Data.DataColumn columnisDone;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1231,9 +1232,9 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn orderCountColumn {
+            public global::System.Data.DataColumn isDoneColumn {
                 get {
-                    return this.columnorderCount;
+                    return this.columnisDone;
                 }
             }
             
@@ -1274,14 +1275,14 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderCompositionRow AddOrderCompositionRow(UserOrderRow parentUserOrderRowByFK__OrderComp__order__2D27B809, ProductsRow parentProductsRowByFK__OrderComp__produ__2E1BDC42, AdditionsRow parentAdditionsRowByFK__OrderComp__addit__2F10007B, int orderCount) {
+            public OrderCompositionRow AddOrderCompositionRow(UserOrderRow parentUserOrderRowByFK__OrderComp__order__2D27B809, ProductsRow parentProductsRowByFK__OrderComp__produ__2E1BDC42, AdditionsRow parentAdditionsRowByFK__OrderComp__addit__2F10007B, string isDone) {
                 OrderCompositionRow rowOrderCompositionRow = ((OrderCompositionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         null,
-                        orderCount};
+                        isDone};
                 if ((parentUserOrderRowByFK__OrderComp__order__2D27B809 != null)) {
                     columnValuesArray[1] = parentUserOrderRowByFK__OrderComp__order__2D27B809[0];
                 }
@@ -1324,7 +1325,7 @@ namespace MUGAdmin {
                 this.columnorderId = base.Columns["orderId"];
                 this.columnproductId = base.Columns["productId"];
                 this.columnadditionId = base.Columns["additionId"];
-                this.columnorderCount = base.Columns["orderCount"];
+                this.columnisDone = base.Columns["isDone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1338,8 +1339,8 @@ namespace MUGAdmin {
                 base.Columns.Add(this.columnproductId);
                 this.columnadditionId = new global::System.Data.DataColumn("additionId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnadditionId);
-                this.columnorderCount = new global::System.Data.DataColumn("orderCount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorderCount);
+                this.columnisDone = new global::System.Data.DataColumn("isDone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDone);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1348,6 +1349,7 @@ namespace MUGAdmin {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnisDone.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2800,28 +2802,28 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int orderCount {
-                get {
-                    try {
-                        return ((int)(this[this.tableOrder_Composition.orderCountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'orderCount\' в таблице \'Order_Composition\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrder_Composition.orderCountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int orderId {
                 get {
                     return ((int)(this[this.tableOrder_Composition.orderIdColumn]));
                 }
                 set {
                     this[this.tableOrder_Composition.orderIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string isDone {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrder_Composition.isDoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'isDone\' в таблице \'Order_Composition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder_Composition.isDoneColumn] = value;
                 }
             }
             
@@ -2863,14 +2865,14 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsorderCountNull() {
-                return this.IsNull(this.tableOrder_Composition.orderCountColumn);
+            public bool IsisDoneNull() {
+                return this.IsNull(this.tableOrder_Composition.isDoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetorderCountNull() {
-                this[this.tableOrder_Composition.orderCountColumn] = global::System.Convert.DBNull;
+            public void SetisDoneNull() {
+                this[this.tableOrder_Composition.isDoneColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3070,17 +3072,17 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int orderCount {
+            public string isDone {
                 get {
                     try {
-                        return ((int)(this[this.tableOrderComposition.orderCountColumn]));
+                        return ((string)(this[this.tableOrderComposition.isDoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'orderCount\' в таблице \'OrderComposition\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'isDone\' в таблице \'OrderComposition\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderComposition.orderCountColumn] = value;
+                    this[this.tableOrderComposition.isDoneColumn] = value;
                 }
             }
             
@@ -3155,14 +3157,14 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsorderCountNull() {
-                return this.IsNull(this.tableOrderComposition.orderCountColumn);
+            public bool IsisDoneNull() {
+                return this.IsNull(this.tableOrderComposition.isDoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetorderCountNull() {
-                this[this.tableOrderComposition.orderCountColumn] = global::System.Convert.DBNull;
+            public void SetisDoneNull() {
+                this[this.tableOrderComposition.isDoneColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4073,8 +4075,8 @@ namespace MUGAdmin.MugDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("userName", "userName");
             tableMapping.ColumnMappings.Add("productName", "productName");
             tableMapping.ColumnMappings.Add("additionName", "additionName");
-            tableMapping.ColumnMappings.Add("orderCount", "orderCount");
             tableMapping.ColumnMappings.Add("orderId", "orderId");
+            tableMapping.ColumnMappings.Add("isDone", "isDone");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4091,8 +4093,8 @@ namespace MUGAdmin.MugDBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, userName, productName, additionName, orderCount, orderId FROM Order_Co" +
-                "mposition";
+            this._commandCollection[0].CommandText = "SELECT id, userName, productName, additionName, orderId, isDone FROM Order_Compos" +
+                "ition";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4622,11 +4624,11 @@ SELECT id, additionName, additionCount, cost FROM Additions WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("orderId", "orderId");
             tableMapping.ColumnMappings.Add("productId", "productId");
             tableMapping.ColumnMappings.Add("additionId", "additionId");
-            tableMapping.ColumnMappings.Add("orderCount", "orderCount");
+            tableMapping.ColumnMappings.Add("isDone", "isDone");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[OrderComposition] WHERE (([id] = @Original_id) AND ((@IsNull_orderId = 1 AND [orderId] IS NULL) OR ([orderId] = @Original_orderId)) AND ((@IsNull_productId = 1 AND [productId] IS NULL) OR ([productId] = @Original_productId)) AND ((@IsNull_additionId = 1 AND [additionId] IS NULL) OR ([additionId] = @Original_additionId)) AND ((@IsNull_orderCount = 1 AND [orderCount] IS NULL) OR ([orderCount] = @Original_orderCount)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [OrderComposition] WHERE (([id] = @Original_id) AND ((@IsNull_orderId = 1 AND [orderId] IS NULL) OR ([orderId] = @Original_orderId)) AND ((@IsNull_productId = 1 AND [productId] IS NULL) OR ([productId] = @Original_productId)) AND ((@IsNull_additionId = 1 AND [additionId] IS NULL) OR ([additionId] = @Original_additionId)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_orderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4635,28 +4637,25 @@ SELECT id, additionName, additionCount, cost FROM Additions WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_productId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[OrderComposition] ([orderId], [productId], [additionId], [orde" +
-                "rCount]) VALUES (@orderId, @productId, @additionId, @orderCount);\r\nSELECT id, or" +
-                "derId, productId, additionId, orderCount FROM OrderComposition WHERE (id = SCOPE" +
-                "_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [OrderComposition] ([orderId], [productId], [additionId], [isDone]) V" +
+                "ALUES (@orderId, @productId, @additionId, @isDone);\r\nSELECT id, orderId, product" +
+                "Id, additionId, isDone FROM OrderComposition WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@orderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[OrderComposition] SET [orderId] = @orderId, [productId] = @productId, [additionId] = @additionId, [orderCount] = @orderCount WHERE (([id] = @Original_id) AND ((@IsNull_orderId = 1 AND [orderId] IS NULL) OR ([orderId] = @Original_orderId)) AND ((@IsNull_productId = 1 AND [productId] IS NULL) OR ([productId] = @Original_productId)) AND ((@IsNull_additionId = 1 AND [additionId] IS NULL) OR ([additionId] = @Original_additionId)) AND ((@IsNull_orderCount = 1 AND [orderCount] IS NULL) OR ([orderCount] = @Original_orderCount)));
-SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [OrderComposition] SET [orderId] = @orderId, [productId] = @productId, [additionId] = @additionId, [isDone] = @isDone WHERE (([id] = @Original_id) AND ((@IsNull_orderId = 1 AND [orderId] IS NULL) OR ([orderId] = @Original_orderId)) AND ((@IsNull_productId = 1 AND [productId] IS NULL) OR ([productId] = @Original_productId)) AND ((@IsNull_additionId = 1 AND [additionId] IS NULL) OR ([additionId] = @Original_additionId)));
+SELECT id, orderId, productId, additionId, isDone FROM OrderComposition WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@orderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_orderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_orderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4664,8 +4663,6 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_productId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_additionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_orderCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "orderCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4682,7 +4679,7 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, orderId, productId, additionId, orderCount FROM dbo.OrderComposition";
+            this._commandCollection[0].CommandText = "SELECT id, orderId, productId, additionId, isDone FROM OrderComposition";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4743,7 +4740,7 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId, global::System.Nullable<int> Original_orderCount) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_orderId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -4769,14 +4766,6 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_orderCount.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_orderCount.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4797,7 +4786,7 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, global::System.Nullable<int> orderCount) {
+        public virtual int Insert(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, string isDone) {
             if ((orderId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(orderId.Value));
             }
@@ -4816,11 +4805,11 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((orderCount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(orderCount.Value));
+            if ((isDone == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(isDone));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4842,7 +4831,7 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, global::System.Nullable<int> orderCount, int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId, global::System.Nullable<int> Original_orderCount, int id) {
+        public virtual int Update(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, string isDone, int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId, int id) {
             if ((orderId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(orderId.Value));
             }
@@ -4861,11 +4850,11 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((orderCount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(orderCount.Value));
+            if ((isDone == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(isDone));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
             if ((Original_orderId.HasValue == true)) {
@@ -4892,15 +4881,7 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_orderCount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_orderCount.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4921,8 +4902,8 @@ SELECT id, orderId, productId, additionId, orderCount FROM OrderComposition WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, global::System.Nullable<int> orderCount, int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId, global::System.Nullable<int> Original_orderCount) {
-            return this.Update(orderId, productId, additionId, orderCount, Original_id, Original_orderId, Original_productId, Original_additionId, Original_orderCount, Original_id);
+        public virtual int Update(global::System.Nullable<int> orderId, global::System.Nullable<int> productId, global::System.Nullable<int> additionId, string isDone, int Original_id, global::System.Nullable<int> Original_orderId, global::System.Nullable<int> Original_productId, global::System.Nullable<int> Original_additionId) {
+            return this.Update(orderId, productId, additionId, isDone, Original_id, Original_orderId, Original_productId, Original_additionId, Original_id);
         }
     }
     

@@ -63,9 +63,7 @@ namespace MUGAdmin
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Added succesfully");
             }
             else
             {
@@ -82,9 +80,9 @@ namespace MUGAdmin
 
         private void cbIdDelete_TextChanged(object sender, EventArgs e)
         {
-            comboboxEditFields($"select additionName from Additions where id = {cbIdDelete.Text}", tbAdditionNameDelete);
-            comboboxEditFields($"select additionCount from Additions where id = {cbIdDelete.Text}", tbAdditionCountDelete);
-            comboboxEditFields($"select cost from Additions where id = {cbIdDelete.Text}", tbCostDelete);
+            comboboxEditFields($"select additionName from Additions where additionName = '{cbIdDelete.Text}'", tbAdditionNameDelete);
+            comboboxEditFields($"select additionCount from Additions where additionName = '{cbIdDelete.Text}'", tbAdditionCountDelete);
+            comboboxEditFields($"select cost from Additions where additionName = '{cbIdDelete.Text}'", tbCostDelete);
         }
 
         private void cbIdDelete_Click(object sender, EventArgs e)
@@ -92,7 +90,7 @@ namespace MUGAdmin
             cbIdDelete.Items.Clear();
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select id from Additions;";
+            command.CommandText = $"select additionName from Additions;";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -111,15 +109,13 @@ namespace MUGAdmin
                 var command = new SqlCommand();
                 command.CommandText = $"UPDATE Additions " +
                     $"SET additionName = '{tbAdditionNameEdit.Text}', additionCount = {tbAdditionCountEdit.Text}, cost = {tbCostEdit.Text} " +
-                    $"WHERE id = {cbIdEdit.Text};";
+                    $"WHERE additionName = '{cbIdEdit.Text}';";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Edited succesfully");
             }
             else
             {
@@ -132,7 +128,7 @@ namespace MUGAdmin
             cbIdEdit.Items.Clear();
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select id from Additions;";
+            command.CommandText = $"select additionName from Additions;";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -146,24 +142,22 @@ namespace MUGAdmin
 
         private void cbIdEdit_TextChanged(object sender, EventArgs e)
         {
-            comboboxEditFields($"select additionName from Additions where id = {cbIdEdit.Text}", tbAdditionNameEdit);
-            comboboxEditFields($"select additionCount from Additions where id = {cbIdEdit.Text}", tbAdditionCountEdit);
-            comboboxEditFields($"select cost from Additions where id = {cbIdEdit.Text}", tbCostEdit);
+            comboboxEditFields($"select additionName from Additions where additionName = '{cbIdEdit.Text}'", tbAdditionNameEdit);
+            comboboxEditFields($"select additionCount from Additions where additionName = '{cbIdEdit.Text}'", tbAdditionCountEdit);
+            comboboxEditFields($"select cost from Additions where additionName = '{cbIdEdit.Text}'", tbCostEdit);
         }
 
         private void btnDeleteAddition_Click(object sender, EventArgs e)
         {
             var command = new SqlCommand();
-            command.CommandText = $"delete from Additions where Additions.id = {cbIdDelete.Text};";
+            command.CommandText = $"delete from Additions where Additions.additionName = '{cbIdDelete.Text}';";
 
             command.Connection = connection;
             connection.Open();
             command.ExecuteScalar();
             connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+            MessageBox.Show("Deleted succesfully");
         }
 
         private void tbAdditionCountAdd_KeyPress(object sender, KeyPressEventArgs e)

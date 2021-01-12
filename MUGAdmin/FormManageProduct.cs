@@ -29,6 +29,8 @@ namespace MUGAdmin
 
         private void FormManageProduct_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "mugDBDataSet.Users". При необходимости она может быть перемещена или удалена.
+            this.usersTableAdapter.Fill(this.mugDBDataSet.Users);
             this.productsTableAdapter.Fill(this.mugDBDataSet.Products);
         }
 
@@ -69,9 +71,7 @@ namespace MUGAdmin
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Added succesfully");
             }
             else
             {
@@ -82,30 +82,28 @@ namespace MUGAdmin
         private void btnUserDelete_Click(object sender, EventArgs e)
         {
             var command = new SqlCommand();
-            command.CommandText = $"delete from Products where Products.id = {cbIdDelete.Text};";
+            command.CommandText = $"delete from Products where Products.productName = '{cbDelete.Text}';";
 
             command.Connection = connection;
             connection.Open();
             command.ExecuteScalar();
             connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+            MessageBox.Show("Deleted succesfully");
         }
 
         private void cbIdDelete_Click(object sender, EventArgs e)
         {
-            cbIdDelete.Items.Clear();
+            cbDelete.Items.Clear();
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select id from Products;";
+            command.CommandText = $"select productName from Products;";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
                 for (var i = 0; i < dataReader.FieldCount; i++)
                 {
-                    cbIdDelete.Items.Add(dataReader[i].ToString());
+                    cbDelete.Items.Add(dataReader[i].ToString());
                 }
             }
             connection.Close();
@@ -113,11 +111,10 @@ namespace MUGAdmin
 
         private void cbIdDelete_TextChanged(object sender, EventArgs e)
         {
-            comboboxEditFields($"select productName from Products where id = {cbIdDelete.Text}", tbProductNameDelete);
-            comboboxEditFields($"select grade from Products where id = {cbIdDelete.Text}", tbGradeDelete);
-            comboboxEditFields($"select volume from Products where id = {cbIdDelete.Text}", tbVolumeDelete);
-            comboboxEditFields($"select composition from Products where id = {cbIdDelete.Text}", tbCompositionDelete);
-            comboboxEditFields($"select cost from Products where id = {cbIdDelete.Text}", tbCostDelete);
+            comboboxEditFields($"select grade from Products where productName = '{cbDelete.Text}'", tbGradeDelete);
+            comboboxEditFields($"select volume from Products where productName = '{cbDelete.Text}'", tbVolumeDelete);
+            comboboxEditFields($"select composition from Products where productName = '{cbDelete.Text}'", tbCompositionDelete);
+            comboboxEditFields($"select cost from Products where productName = '{cbDelete.Text}'", tbCostDelete);
         }
 
         private void btnProductEdit_Click(object sender, EventArgs e)
@@ -132,15 +129,13 @@ namespace MUGAdmin
                     $"composition = '{tbCompositionEdit.Text}', " +
                     $"cost = {tbCostEdit.Text}, " +
                     $"productImage = (SELECT BulkColumn FROM Openrowset(Bulk '{filename}', Single_Blob) as img)" +
-                    $"WHERE id = {cbIdEdit.Text};";
+                    $"WHERE productName = '{cbIdEdit.Text}';";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Edited succesfully");
             }
             else
             {
@@ -154,7 +149,7 @@ namespace MUGAdmin
             cbIdEdit.Items.Clear();
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select id from Products;";
+            command.CommandText = $"select productName from Products;";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -168,11 +163,11 @@ namespace MUGAdmin
 
         private void cbIdEdit_TextChanged(object sender, EventArgs e)
         {
-            comboboxEditFields($"select productName from Products where id = {cbIdEdit.Text}", tbProductNameEdit);
-            comboboxEditFields($"select grade from Products where id = {cbIdEdit.Text}", tbGradeEdit);
-            comboboxEditFields($"select volume from Products where id = {cbIdEdit.Text}", tbVolumeEdit);
-            comboboxEditFields($"select composition from Products where id = {cbIdEdit.Text}", tbCompositionEdit);
-            comboboxEditFields($"select cost from Products where id = {cbIdEdit.Text}", tbCostEdit);
+            comboboxEditFields($"select productName from Products where productName = '{cbIdEdit.Text}'", tbProductNameEdit);
+            comboboxEditFields($"select grade from Products where productName = '{cbIdEdit.Text}'", tbGradeEdit);
+            comboboxEditFields($"select volume from Products where productName = '{cbIdEdit.Text}'", tbVolumeEdit);
+            comboboxEditFields($"select composition from Products where productName = '{cbIdEdit.Text}'", tbCompositionEdit);
+            comboboxEditFields($"select cost from Products where productName = '{cbIdEdit.Text}'", tbCostEdit);
         }
 
         private void btnOpenFileUpdate_Click(object sender, EventArgs e)

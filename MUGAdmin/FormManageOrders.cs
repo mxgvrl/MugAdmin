@@ -75,19 +75,19 @@ namespace MUGAdmin
 
         private void cbIdDelete_Click(object sender, EventArgs e)
         {
-            comboboxDropDownInfo("select id from UserOrder;", cbIdDelete);
+            comboboxDropDownInfo("select userName from User_Order;", cbIdDelete);
         }
 
         private void cbIdEdit_Click(object sender, EventArgs e)
         {
-            comboboxDropDownInfo("select id from UserOrder;", cbIdEdit);
+            comboboxDropDownInfo("select userName from User_Order;", cbIdEdit);
         }
 
         private void cbIdDelete_TextChanged(object sender, EventArgs e)
         {
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select orderDate from User_Order where id = {cbIdDelete.Text}";
+            command.CommandText = $"select orderDate from User_Order where userName = '{cbIdDelete.Text}'";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -97,7 +97,7 @@ namespace MUGAdmin
 
             connection.Open();
             var command1 = connection.CreateCommand();
-            command1.CommandText = $"select userName from User_Order where id = {cbIdDelete.Text}";
+            command1.CommandText = $"select userName from User_Order where userName = '{cbIdDelete.Text}'";
             var dataReader1 = command1.ExecuteReader();
             while (dataReader1.Read())
             {
@@ -110,7 +110,7 @@ namespace MUGAdmin
         {
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText = $"select orderDate from UserOrder where id = {cbIdEdit.Text}";
+            command.CommandText = $"select orderDate from User_Order where userName = '{cbIdDelete.Text}'";
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
@@ -120,7 +120,7 @@ namespace MUGAdmin
 
             connection.Open();
             var command1 = connection.CreateCommand();
-            command1.CommandText = $"select userName from User_Order where id = {cbIdEdit.Text}";
+            command1.CommandText = $"select userName from User_Order where userName = '{cbIdDelete.Text}'";
             var dataReader1 = command1.ExecuteReader();
             while (dataReader1.Read())
             {
@@ -143,9 +143,7 @@ namespace MUGAdmin
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Added succesfully");
             }
             else
             {
@@ -156,16 +154,14 @@ namespace MUGAdmin
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
             var command = new SqlCommand();
-            command.CommandText = $"delete from UserOrder where UserOrder.id = {cbIdDelete.Text};";
+            command.CommandText = $"delete from UserOrder where UserOrder.userId = (select id from Users where userName = '{cbIdDelete.Text}');";
 
             command.Connection = connection;
             connection.Open();
             command.ExecuteScalar();
             connection.Close();
 
-            this.Close();
-            FormMain formMain = new FormMain();
-            formMain.Show();
+            MessageBox.Show("Deleted succesfully");
         }
 
         private void btnEditOrder_Click(object sender, EventArgs e)
@@ -175,17 +171,15 @@ namespace MUGAdmin
                 var command = new SqlCommand();
                 command.CommandText = $"UPDATE UserOrder " +
                     $"SET userId = (select userId from UserOrder where userId = (select id from Users where userName = '{cbNameEdit.Text}') ), orderDate = '{dtpDateEdit.Value}' " +
-                    $"WHERE id = {cbIdEdit.Text};";
+                    $"WHERE userId = (select userId from UserOrder where userId = (select id from Users where userName = '{cbIdEdit.Text}') );";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
                 connection.Close();
 
-                this.Close();
-                FormMain formMain = new FormMain();
-                formMain.Show();
+                MessageBox.Show("Edited succesfully");
             }
-             else
+            else
             {
                 MessageBox.Show("Fill all fields");
             }   

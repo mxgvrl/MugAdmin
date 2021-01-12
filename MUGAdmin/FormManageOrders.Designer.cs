@@ -31,21 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label orderDateLabel;
             System.Windows.Forms.Label userNameLabel;
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label orderDateLabel1;
             System.Windows.Forms.Label userNameLabel1;
-            System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label orderDateLabel2;
             System.Windows.Forms.Label userNameLabel2;
+            System.Windows.Forms.Label userNameLabel3;
+            System.Windows.Forms.Label userNameLabel4;
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbIdEdit = new System.Windows.Forms.ComboBox();
             this.user_OrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mugDBDataSet = new MUGAdmin.MugDBDataSet();
             this.dtpDateEdit = new System.Windows.Forms.DateTimePicker();
             this.cbNameEdit = new System.Windows.Forms.ComboBox();
             this.btnEditOrder = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbIdDelete = new System.Windows.Forms.ComboBox();
             this.dtpDateDelete = new System.Windows.Forms.DateTimePicker();
             this.cbNameDelete = new System.Windows.Forms.ComboBox();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -56,14 +54,16 @@
             this.btnBackOrderManage = new System.Windows.Forms.Button();
             this.user_OrderTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.User_OrderTableAdapter();
             this.tableAdapterManager = new MUGAdmin.MugDBDataSetTableAdapters.TableAdapterManager();
+            this.cbIdDelete = new System.Windows.Forms.ComboBox();
+            this.cbIdEdit = new System.Windows.Forms.ComboBox();
             orderDateLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
-            idLabel = new System.Windows.Forms.Label();
             orderDateLabel1 = new System.Windows.Forms.Label();
             userNameLabel1 = new System.Windows.Forms.Label();
-            idLabel1 = new System.Windows.Forms.Label();
             orderDateLabel2 = new System.Windows.Forms.Label();
             userNameLabel2 = new System.Windows.Forms.Label();
+            userNameLabel3 = new System.Windows.Forms.Label();
+            userNameLabel4 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_OrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
@@ -89,15 +89,6 @@
             userNameLabel.TabIndex = 15;
             userNameLabel.Text = "user Name:";
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(22, 39);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(23, 17);
-            idLabel.TabIndex = 14;
-            idLabel.Text = "id:";
-            // 
             // orderDateLabel1
             // 
             orderDateLabel1.AutoSize = true;
@@ -115,15 +106,6 @@
             userNameLabel1.Size = new System.Drawing.Size(81, 17);
             userNameLabel1.TabIndex = 18;
             userNameLabel1.Text = "user Name:";
-            // 
-            // idLabel1
-            // 
-            idLabel1.AutoSize = true;
-            idLabel1.Location = new System.Drawing.Point(21, 36);
-            idLabel1.Name = "idLabel1";
-            idLabel1.Size = new System.Drawing.Size(23, 17);
-            idLabel1.TabIndex = 24;
-            idLabel1.Text = "id:";
             // 
             // orderDateLabel2
             // 
@@ -145,7 +127,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(idLabel1);
+            this.groupBox3.Controls.Add(userNameLabel4);
             this.groupBox3.Controls.Add(this.cbIdEdit);
             this.groupBox3.Controls.Add(orderDateLabel2);
             this.groupBox3.Controls.Add(this.dtpDateEdit);
@@ -158,17 +140,6 @@
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";
-            // 
-            // cbIdEdit
-            // 
-            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "id", true));
-            this.cbIdEdit.FormattingEnabled = true;
-            this.cbIdEdit.Location = new System.Drawing.Point(108, 33);
-            this.cbIdEdit.Name = "cbIdEdit";
-            this.cbIdEdit.Size = new System.Drawing.Size(200, 24);
-            this.cbIdEdit.TabIndex = 25;
-            this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
-            this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
             // 
             // user_OrderBindingSource
             // 
@@ -210,7 +181,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(idLabel);
+            this.groupBox2.Controls.Add(userNameLabel3);
             this.groupBox2.Controls.Add(this.cbIdDelete);
             this.groupBox2.Controls.Add(orderDateLabel1);
             this.groupBox2.Controls.Add(this.dtpDateDelete);
@@ -219,21 +190,10 @@
             this.groupBox2.Controls.Add(this.btnDeleteOrder);
             this.groupBox2.Location = new System.Drawing.Point(350, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 191);
+            this.groupBox2.Size = new System.Drawing.Size(330, 194);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
-            // 
-            // cbIdDelete
-            // 
-            this.cbIdDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "id", true));
-            this.cbIdDelete.FormattingEnabled = true;
-            this.cbIdDelete.Location = new System.Drawing.Point(109, 36);
-            this.cbIdDelete.Name = "cbIdDelete";
-            this.cbIdDelete.Size = new System.Drawing.Size(200, 24);
-            this.cbIdDelete.TabIndex = 15;
-            this.cbIdDelete.TextChanged += new System.EventHandler(this.cbIdDelete_TextChanged);
-            this.cbIdDelete.Click += new System.EventHandler(this.cbIdDelete_Click);
             // 
             // dtpDateDelete
             // 
@@ -332,6 +292,46 @@
             this.tableAdapterManager.UserOrderTableAdapter = null;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
+            // userNameLabel3
+            // 
+            userNameLabel3.AutoSize = true;
+            userNameLabel3.Location = new System.Drawing.Point(21, 39);
+            userNameLabel3.Name = "userNameLabel3";
+            userNameLabel3.Size = new System.Drawing.Size(57, 17);
+            userNameLabel3.TabIndex = 19;
+            userNameLabel3.Text = "Search:";
+            // 
+            // cbIdDelete
+            // 
+            this.cbIdDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "userName", true));
+            this.cbIdDelete.FormattingEnabled = true;
+            this.cbIdDelete.Location = new System.Drawing.Point(108, 36);
+            this.cbIdDelete.Name = "cbIdDelete";
+            this.cbIdDelete.Size = new System.Drawing.Size(201, 24);
+            this.cbIdDelete.TabIndex = 20;
+            this.cbIdDelete.TextChanged += new System.EventHandler(this.cbIdDelete_TextChanged);
+            this.cbIdDelete.Click += new System.EventHandler(this.cbIdDelete_Click);
+            // 
+            // userNameLabel4
+            // 
+            userNameLabel4.AutoSize = true;
+            userNameLabel4.Location = new System.Drawing.Point(21, 36);
+            userNameLabel4.Name = "userNameLabel4";
+            userNameLabel4.Size = new System.Drawing.Size(57, 17);
+            userNameLabel4.TabIndex = 29;
+            userNameLabel4.Text = "Search:";
+            // 
+            // cbIdEdit
+            // 
+            this.cbIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.user_OrderBindingSource, "userName", true));
+            this.cbIdEdit.FormattingEnabled = true;
+            this.cbIdEdit.Location = new System.Drawing.Point(108, 33);
+            this.cbIdEdit.Name = "cbIdEdit";
+            this.cbIdEdit.Size = new System.Drawing.Size(200, 24);
+            this.cbIdEdit.TabIndex = 30;
+            this.cbIdEdit.TextChanged += new System.EventHandler(this.cbIdEdit_TextChanged);
+            this.cbIdEdit.Click += new System.EventHandler(this.cbIdEdit_Click);
+            // 
             // FormManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,11 +372,11 @@
         private MugDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DateTimePicker dtpDateAdd;
         private System.Windows.Forms.ComboBox cbNameAdd;
-        private System.Windows.Forms.ComboBox cbIdEdit;
         private System.Windows.Forms.DateTimePicker dtpDateEdit;
         private System.Windows.Forms.ComboBox cbNameEdit;
-        private System.Windows.Forms.ComboBox cbIdDelete;
         private System.Windows.Forms.DateTimePicker dtpDateDelete;
         private System.Windows.Forms.ComboBox cbNameDelete;
+        private System.Windows.Forms.ComboBox cbIdEdit;
+        private System.Windows.Forms.ComboBox cbIdDelete;
     }
 }

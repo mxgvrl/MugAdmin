@@ -94,6 +94,12 @@
     <Compile Include="FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTakeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTakeOrder.Designer.cs">
+      <DependentUpon>FormTakeOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="MugDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTakeOrder.resx">
+      <DependentUpon>FormTakeOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

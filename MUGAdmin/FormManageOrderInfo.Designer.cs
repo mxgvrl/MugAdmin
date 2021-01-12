@@ -32,20 +32,20 @@
             System.Windows.Forms.Label userNameLabel;
             System.Windows.Forms.Label productNameLabel;
             System.Windows.Forms.Label additionNameLabel;
-            System.Windows.Forms.Label orderCountLabel;
             System.Windows.Forms.Label userNameLabel1;
             System.Windows.Forms.Label productNameLabel1;
             System.Windows.Forms.Label additionNameLabel1;
-            System.Windows.Forms.Label orderCountLabel1;
             System.Windows.Forms.Label userNameLabel2;
             System.Windows.Forms.Label productNameLabel2;
             System.Windows.Forms.Label additionNameLabel2;
-            System.Windows.Forms.Label orderCountLabel2;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label orderIdLabel;
             System.Windows.Forms.Label orderIdLabel1;
             System.Windows.Forms.Label orderIdLabel2;
+            System.Windows.Forms.Label isDoneLabel;
+            System.Windows.Forms.Label isDoneLabel1;
+            System.Windows.Forms.Label isDoneLabel2;
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbOrderEdit = new System.Windows.Forms.ComboBox();
             this.order_CompositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,7 +54,6 @@
             this.cbUserEdit = new System.Windows.Forms.ComboBox();
             this.cbProductEdit = new System.Windows.Forms.ComboBox();
             this.cbAdditionEdit = new System.Windows.Forms.ComboBox();
-            this.tbCountEdit = new System.Windows.Forms.TextBox();
             this.btnEditOrderInfo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbOrderDelete = new System.Windows.Forms.ComboBox();
@@ -62,35 +61,35 @@
             this.cbUserDelete = new System.Windows.Forms.ComboBox();
             this.cbProductDelete = new System.Windows.Forms.ComboBox();
             this.cbAdditionDelete = new System.Windows.Forms.ComboBox();
-            this.tbCountDelete = new System.Windows.Forms.TextBox();
             this.btnDeleteOrderInfo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbOrderAdd = new System.Windows.Forms.ComboBox();
             this.cbUserAdd = new System.Windows.Forms.ComboBox();
             this.cbProductAdd = new System.Windows.Forms.ComboBox();
             this.cbAdditionAdd = new System.Windows.Forms.ComboBox();
-            this.tbCountAdd = new System.Windows.Forms.TextBox();
             this.btnAddOrderInfo = new System.Windows.Forms.Button();
-            this.btnBackOrderInfoManage = new System.Windows.Forms.Button();
             this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
             this.tableAdapterManager = new MUGAdmin.MugDBDataSetTableAdapters.TableAdapterManager();
+            this.cbIsDoneAdd = new System.Windows.Forms.ComboBox();
+            this.cbIsDoneDelete = new System.Windows.Forms.ComboBox();
+            this.cbIsDoneEdit = new System.Windows.Forms.ComboBox();
             userNameLabel = new System.Windows.Forms.Label();
             productNameLabel = new System.Windows.Forms.Label();
             additionNameLabel = new System.Windows.Forms.Label();
-            orderCountLabel = new System.Windows.Forms.Label();
             userNameLabel1 = new System.Windows.Forms.Label();
             productNameLabel1 = new System.Windows.Forms.Label();
             additionNameLabel1 = new System.Windows.Forms.Label();
-            orderCountLabel1 = new System.Windows.Forms.Label();
             userNameLabel2 = new System.Windows.Forms.Label();
             productNameLabel2 = new System.Windows.Forms.Label();
             additionNameLabel2 = new System.Windows.Forms.Label();
-            orderCountLabel2 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             idLabel1 = new System.Windows.Forms.Label();
             orderIdLabel = new System.Windows.Forms.Label();
             orderIdLabel1 = new System.Windows.Forms.Label();
             orderIdLabel2 = new System.Windows.Forms.Label();
+            isDoneLabel = new System.Windows.Forms.Label();
+            isDoneLabel1 = new System.Windows.Forms.Label();
+            isDoneLabel2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
@@ -125,15 +124,6 @@
             additionNameLabel.TabIndex = 17;
             additionNameLabel.Text = "addition Name:";
             // 
-            // orderCountLabel
-            // 
-            orderCountLabel.AutoSize = true;
-            orderCountLabel.Location = new System.Drawing.Point(18, 168);
-            orderCountLabel.Name = "orderCountLabel";
-            orderCountLabel.Size = new System.Drawing.Size(87, 17);
-            orderCountLabel.TabIndex = 19;
-            orderCountLabel.Text = "order Count:";
-            // 
             // userNameLabel1
             // 
             userNameLabel1.AutoSize = true;
@@ -161,15 +151,6 @@
             additionNameLabel1.TabIndex = 20;
             additionNameLabel1.Text = "addition Name:";
             // 
-            // orderCountLabel1
-            // 
-            orderCountLabel1.AutoSize = true;
-            orderCountLabel1.Location = new System.Drawing.Point(17, 195);
-            orderCountLabel1.Name = "orderCountLabel1";
-            orderCountLabel1.Size = new System.Drawing.Size(87, 17);
-            orderCountLabel1.TabIndex = 22;
-            orderCountLabel1.Text = "order Count:";
-            // 
             // userNameLabel2
             // 
             userNameLabel2.AutoSize = true;
@@ -196,15 +177,6 @@
             additionNameLabel2.Size = new System.Drawing.Size(103, 17);
             additionNameLabel2.TabIndex = 30;
             additionNameLabel2.Text = "addition Name:";
-            // 
-            // orderCountLabel2
-            // 
-            orderCountLabel2.AutoSize = true;
-            orderCountLabel2.Location = new System.Drawing.Point(20, 195);
-            orderCountLabel2.Name = "orderCountLabel2";
-            orderCountLabel2.Size = new System.Drawing.Size(87, 17);
-            orderCountLabel2.TabIndex = 32;
-            orderCountLabel2.Text = "order Count:";
             // 
             // idLabel
             // 
@@ -253,6 +225,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(isDoneLabel2);
+            this.groupBox3.Controls.Add(this.cbIsDoneEdit);
             this.groupBox3.Controls.Add(orderIdLabel2);
             this.groupBox3.Controls.Add(this.cbOrderEdit);
             this.groupBox3.Controls.Add(idLabel1);
@@ -263,8 +237,6 @@
             this.groupBox3.Controls.Add(this.cbProductEdit);
             this.groupBox3.Controls.Add(additionNameLabel2);
             this.groupBox3.Controls.Add(this.cbAdditionEdit);
-            this.groupBox3.Controls.Add(orderCountLabel2);
-            this.groupBox3.Controls.Add(this.tbCountEdit);
             this.groupBox3.Controls.Add(this.btnEditOrderInfo);
             this.groupBox3.Location = new System.Drawing.Point(709, 12);
             this.groupBox3.Name = "groupBox3";
@@ -335,15 +307,6 @@
             this.cbAdditionEdit.TabIndex = 31;
             this.cbAdditionEdit.Click += new System.EventHandler(this.cbAdditionEdit_Click);
             // 
-            // tbCountEdit
-            // 
-            this.tbCountEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "orderCount", true));
-            this.tbCountEdit.Location = new System.Drawing.Point(129, 192);
-            this.tbCountEdit.Name = "tbCountEdit";
-            this.tbCountEdit.Size = new System.Drawing.Size(178, 22);
-            this.tbCountEdit.TabIndex = 33;
-            this.tbCountEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountEdit_KeyPress);
-            // 
             // btnEditOrderInfo
             // 
             this.btnEditOrderInfo.Location = new System.Drawing.Point(23, 239);
@@ -356,6 +319,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(isDoneLabel1);
+            this.groupBox2.Controls.Add(this.cbIsDoneDelete);
             this.groupBox2.Controls.Add(orderIdLabel1);
             this.groupBox2.Controls.Add(this.cbOrderDelete);
             this.groupBox2.Controls.Add(idLabel);
@@ -366,8 +331,6 @@
             this.groupBox2.Controls.Add(this.cbProductDelete);
             this.groupBox2.Controls.Add(additionNameLabel1);
             this.groupBox2.Controls.Add(this.cbAdditionDelete);
-            this.groupBox2.Controls.Add(orderCountLabel1);
-            this.groupBox2.Controls.Add(this.tbCountDelete);
             this.groupBox2.Controls.Add(this.btnDeleteOrderInfo);
             this.groupBox2.Location = new System.Drawing.Point(351, 12);
             this.groupBox2.Name = "groupBox2";
@@ -431,16 +394,6 @@
             this.cbAdditionDelete.TabIndex = 21;
             this.cbAdditionDelete.Click += new System.EventHandler(this.cbAdditionDelete_Click);
             // 
-            // tbCountDelete
-            // 
-            this.tbCountDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "orderCount", true));
-            this.tbCountDelete.Enabled = false;
-            this.tbCountDelete.Location = new System.Drawing.Point(126, 194);
-            this.tbCountDelete.Name = "tbCountDelete";
-            this.tbCountDelete.Size = new System.Drawing.Size(179, 22);
-            this.tbCountDelete.TabIndex = 23;
-            this.tbCountDelete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountDelete_KeyPress);
-            // 
             // btnDeleteOrderInfo
             // 
             this.btnDeleteOrderInfo.Location = new System.Drawing.Point(20, 239);
@@ -453,6 +406,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(isDoneLabel);
+            this.groupBox1.Controls.Add(this.cbIsDoneAdd);
             this.groupBox1.Controls.Add(orderIdLabel);
             this.groupBox1.Controls.Add(this.cbOrderAdd);
             this.groupBox1.Controls.Add(userNameLabel);
@@ -461,8 +416,6 @@
             this.groupBox1.Controls.Add(this.cbProductAdd);
             this.groupBox1.Controls.Add(additionNameLabel);
             this.groupBox1.Controls.Add(this.cbAdditionAdd);
-            this.groupBox1.Controls.Add(orderCountLabel);
-            this.groupBox1.Controls.Add(this.tbCountAdd);
             this.groupBox1.Controls.Add(this.btnAddOrderInfo);
             this.groupBox1.Location = new System.Drawing.Point(10, 12);
             this.groupBox1.Name = "groupBox1";
@@ -513,15 +466,6 @@
             this.cbAdditionAdd.TabIndex = 18;
             this.cbAdditionAdd.Click += new System.EventHandler(this.cbAdditionAdd_Click);
             // 
-            // tbCountAdd
-            // 
-            this.tbCountAdd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "orderCount", true));
-            this.tbCountAdd.Location = new System.Drawing.Point(127, 165);
-            this.tbCountAdd.Name = "tbCountAdd";
-            this.tbCountAdd.Size = new System.Drawing.Size(174, 22);
-            this.tbCountAdd.TabIndex = 20;
-            this.tbCountAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCountAdd_KeyPress);
-            // 
             // btnAddOrderInfo
             // 
             this.btnAddOrderInfo.Location = new System.Drawing.Point(17, 239);
@@ -531,16 +475,6 @@
             this.btnAddOrderInfo.Text = "Add";
             this.btnAddOrderInfo.UseVisualStyleBackColor = true;
             this.btnAddOrderInfo.Click += new System.EventHandler(this.btnAddOrderInfo_Click);
-            // 
-            // btnBackOrderInfoManage
-            // 
-            this.btnBackOrderInfoManage.Location = new System.Drawing.Point(10, 336);
-            this.btnBackOrderInfoManage.Name = "btnBackOrderInfoManage";
-            this.btnBackOrderInfoManage.Size = new System.Drawing.Size(76, 30);
-            this.btnBackOrderInfoManage.TabIndex = 37;
-            this.btnBackOrderInfoManage.Text = "< Back";
-            this.btnBackOrderInfoManage.UseVisualStyleBackColor = true;
-            this.btnBackOrderInfoManage.Click += new System.EventHandler(this.btnBackOrderInfoManage_Click);
             // 
             // order_CompositionTableAdapter
             // 
@@ -557,15 +491,78 @@
             this.tableAdapterManager.UserOrderTableAdapter = null;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
+            // isDoneLabel
+            // 
+            isDoneLabel.AutoSize = true;
+            isDoneLabel.Location = new System.Drawing.Point(19, 170);
+            isDoneLabel.Name = "isDoneLabel";
+            isDoneLabel.Size = new System.Drawing.Size(60, 17);
+            isDoneLabel.TabIndex = 21;
+            isDoneLabel.Text = "is Done:";
+            // 
+            // cbIsDoneAdd
+            // 
+            this.cbIsDoneAdd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "isDone", true));
+            this.cbIsDoneAdd.FormattingEnabled = true;
+            this.cbIsDoneAdd.Items.AddRange(new object[] {
+            "Done",
+            "Not done"});
+            this.cbIsDoneAdd.Location = new System.Drawing.Point(127, 164);
+            this.cbIsDoneAdd.Name = "cbIsDoneAdd";
+            this.cbIsDoneAdd.Size = new System.Drawing.Size(174, 24);
+            this.cbIsDoneAdd.TabIndex = 22;
+            // 
+            // isDoneLabel1
+            // 
+            isDoneLabel1.AutoSize = true;
+            isDoneLabel1.Location = new System.Drawing.Point(18, 196);
+            isDoneLabel1.Name = "isDoneLabel1";
+            isDoneLabel1.Size = new System.Drawing.Size(60, 17);
+            isDoneLabel1.TabIndex = 25;
+            isDoneLabel1.Text = "is Done:";
+            // 
+            // cbIsDoneDelete
+            // 
+            this.cbIsDoneDelete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "isDone", true));
+            this.cbIsDoneDelete.Enabled = false;
+            this.cbIsDoneDelete.FormattingEnabled = true;
+            this.cbIsDoneDelete.Items.AddRange(new object[] {
+            "Done",
+            "Not done"});
+            this.cbIsDoneDelete.Location = new System.Drawing.Point(126, 193);
+            this.cbIsDoneDelete.Name = "cbIsDoneDelete";
+            this.cbIsDoneDelete.Size = new System.Drawing.Size(179, 24);
+            this.cbIsDoneDelete.TabIndex = 26;
+            // 
+            // isDoneLabel2
+            // 
+            isDoneLabel2.AutoSize = true;
+            isDoneLabel2.Location = new System.Drawing.Point(21, 196);
+            isDoneLabel2.Name = "isDoneLabel2";
+            isDoneLabel2.Size = new System.Drawing.Size(60, 17);
+            isDoneLabel2.TabIndex = 35;
+            isDoneLabel2.Text = "is Done:";
+            // 
+            // cbIsDoneEdit
+            // 
+            this.cbIsDoneEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.order_CompositionBindingSource, "isDone", true));
+            this.cbIsDoneEdit.FormattingEnabled = true;
+            this.cbIsDoneEdit.Items.AddRange(new object[] {
+            "Done",
+            "Not done"});
+            this.cbIsDoneEdit.Location = new System.Drawing.Point(129, 193);
+            this.cbIsDoneEdit.Name = "cbIsDoneEdit";
+            this.cbIsDoneEdit.Size = new System.Drawing.Size(178, 24);
+            this.cbIsDoneEdit.TabIndex = 36;
+            // 
             // FormManageOrderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 378);
+            this.ClientSize = new System.Drawing.Size(1052, 323);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackOrderInfoManage);
             this.Name = "FormManageOrderInfo";
             this.Text = "FormManageOrderInfo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageOrderInfo_FormClosed);
@@ -590,7 +587,6 @@
         private System.Windows.Forms.Button btnDeleteOrderInfo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddOrderInfo;
-        private System.Windows.Forms.Button btnBackOrderInfoManage;
         private MugDBDataSet mugDBDataSet;
         private System.Windows.Forms.BindingSource order_CompositionBindingSource;
         private MugDBDataSetTableAdapters.Order_CompositionTableAdapter order_CompositionTableAdapter;
@@ -598,19 +594,19 @@
         private System.Windows.Forms.ComboBox cbUserAdd;
         private System.Windows.Forms.ComboBox cbProductAdd;
         private System.Windows.Forms.ComboBox cbAdditionAdd;
-        private System.Windows.Forms.TextBox tbCountAdd;
         private System.Windows.Forms.ComboBox cbUserEdit;
         private System.Windows.Forms.ComboBox cbProductEdit;
         private System.Windows.Forms.ComboBox cbAdditionEdit;
-        private System.Windows.Forms.TextBox tbCountEdit;
         private System.Windows.Forms.ComboBox cbUserDelete;
         private System.Windows.Forms.ComboBox cbProductDelete;
         private System.Windows.Forms.ComboBox cbAdditionDelete;
-        private System.Windows.Forms.TextBox tbCountDelete;
         private System.Windows.Forms.ComboBox cbIdEdit;
         private System.Windows.Forms.ComboBox cbIdDelete;
         private System.Windows.Forms.ComboBox cbOrderEdit;
         private System.Windows.Forms.ComboBox cbOrderDelete;
         private System.Windows.Forms.ComboBox cbOrderAdd;
+        private System.Windows.Forms.ComboBox cbIsDoneAdd;
+        private System.Windows.Forms.ComboBox cbIsDoneEdit;
+        private System.Windows.Forms.ComboBox cbIsDoneDelete;
     }
 }
