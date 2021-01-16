@@ -31,7 +31,7 @@ namespace MUGAdmin
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "mugDBDataSet.Users". При необходимости она может быть перемещена или удалена.
             this.usersTableAdapter.Fill(this.mugDBDataSet.Users);
-            this.productsTableAdapter.Fill(this.mugDBDataSet.Products);
+            //this.productsTableAdapter.Fill(this.mugDBDataSet.Products);
         }
 
         private void comboboxEditFields(string query, TextBox tb)
@@ -62,9 +62,8 @@ namespace MUGAdmin
             if (tbProductNameAdd.Text != "" && filename != "" && tbGradeAdd.Text != "" && tbVolumeAdd.Text != "" && tbCompositionAdd.Text != "" && tbCostAdd.Text != "")
             {
                 var command = new SqlCommand();
-                command.CommandText = $"insert into Products (productName, grade, volume, composition, cost, productImage) " +
-                    $"SELECT '{tbProductNameAdd.Text}', '{tbGradeAdd.Text}', {tbVolumeAdd.Text}, '{tbCompositionAdd.Text}', {tbCostAdd.Text}, BulkColumn " +
-                    $"FROM Openrowset(Bulk '{filename}', Single_Blob) as img";
+                command.CommandText = $"insert into Products values " +
+                    $"('{tbProductNameAdd.Text}', '{filename}', '{tbVolumeAdd.Text}', {tbVolumeAdd.Text}, '{tbCompositionAdd.Text}', {tbCostAdd.Text}); ";
 
                 command.Connection = connection;
                 connection.Open();
@@ -128,7 +127,7 @@ namespace MUGAdmin
                     $"volume = {tbVolumeEdit.Text}, " +
                     $"composition = '{tbCompositionEdit.Text}', " +
                     $"cost = {tbCostEdit.Text}, " +
-                    $"productImage = (SELECT BulkColumn FROM Openrowset(Bulk '{filename}', Single_Blob) as img)" +
+                    $"productImage = '{filename}'" +
                     $"WHERE productName = '{cbIdEdit.Text}';";
                 command.Connection = connection;
                 connection.Open();

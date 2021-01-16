@@ -182,5 +182,40 @@ namespace MUGAdmin
 
             ExcelApp.Visible = true;
         }
+
+        private void cbProdName_Click(object sender, EventArgs e)
+        {
+            cbProdName.Items.Clear();
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText = $"select productName from Products;";
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                for (var i = 0; i < dataReader.FieldCount; i++)
+                {
+                    cbProdName.Items.Add(dataReader[i].ToString());
+                }
+            }
+            connection.Close();
+        }
+
+        string filepath = "";
+        private void cbProdName_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbProdName_TextChanged(object sender, EventArgs e)
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText = $"select productImage from Products where productName = '{cbProdName.Text}';";
+            var dataReader = command.ExecuteReader();
+            dataReader.Read();
+            filepath = dataReader[0].ToString();
+            connection.Close();
+            productImagePictureBox.Image = Image.FromFile(filepath);
+        }
     }
 }

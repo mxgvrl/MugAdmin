@@ -191,7 +191,7 @@
             this.groupBox3.Controls.Add(this.btnEditAddition);
             this.groupBox3.Location = new System.Drawing.Point(671, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(336, 251);
+            this.groupBox3.Size = new System.Drawing.Size(324, 251);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Edit";

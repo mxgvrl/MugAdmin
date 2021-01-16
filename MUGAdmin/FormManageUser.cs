@@ -180,7 +180,7 @@ namespace MUGAdmin
                 var command = new SqlCommand();
                 command.CommandText = $"UPDATE Users " +
                     $"SET userName = '{tbUserNameEdit.Text}', userPassword = '{tbUserPasswordEdit.Text}', adress = '{tbAdressEdit.Text}', userRole = '{cbRoleEdit.Text}'" +
-                    $"WHERE userName = {cbUserNameSearch.Text};";
+                    $"WHERE userName = '{cbUserNameSearch.Text}';";
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteScalar();
