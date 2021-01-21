@@ -9,10 +9,10 @@
     <Shape ID="DesignTable:Order_Composition" ZOrder="11" X="1023" Y="70" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
     <Shape ID="DesignTable:Additions" ZOrder="10" X="1393" Y="70" Height="181" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:OrderComposition" ZOrder="9" X="1698" Y="70" Height="204" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:Products" ZOrder="8" X="2068" Y="70" Height="250" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:UserOrder" ZOrder="7" X="2367" Y="70" Height="158" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Users" ZOrder="6" X="2676" Y="70" Height="204" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:User_Order" ZOrder="5" X="2950" Y="70" Height="158" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:Products" ZOrder="8" X="2068" Y="70" Height="250" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__OrderComp__addit__2F10007B" ZOrder="4" LineWidth="11">
@@ -39,19 +39,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__OrderComp__produ__2E1BDC42" ZOrder="2" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>2068</X>
-          <Y>172</Y>
-        </Point>
-        <Point>
-          <X>1998</X>
-          <Y>172</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK__UserOrder__userI__2A4B4B5E" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK__UserOrder__userI__2A4B4B5E" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>2676</X>
@@ -60,6 +48,26 @@
         <Point>
           <X>2606</X>
           <Y>141</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK__OrderComp__produ__4D94879B" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>126</X>
+          <Y>0</Y>
+        </Point>
+        <Point>
+          <X>126</X>
+          <Y>-30</Y>
+        </Point>
+        <Point>
+          <X>126</X>
+          <Y>-30</Y>
+        </Point>
+        <Point>
+          <X>126</X>
+          <Y>0</Y>
         </Point>
       </RoutePoints>
     </Connector>

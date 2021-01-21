@@ -2389,8 +2389,6 @@ namespace MUGAdmin {
             
             private global::System.Data.DataColumn columnproductName;
             
-            private global::System.Data.DataColumn columnproductImage;
-            
             private global::System.Data.DataColumn columngrade;
             
             private global::System.Data.DataColumn columnvolume;
@@ -2398,6 +2396,8 @@ namespace MUGAdmin {
             private global::System.Data.DataColumn columncomposition;
             
             private global::System.Data.DataColumn columncost;
+            
+            private global::System.Data.DataColumn columnproductImage;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2450,14 +2450,6 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn productImageColumn {
-                get {
-                    return this.columnproductImage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn gradeColumn {
                 get {
                     return this.columngrade;
@@ -2485,6 +2477,14 @@ namespace MUGAdmin {
             public global::System.Data.DataColumn costColumn {
                 get {
                     return this.columncost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn productImageColumn {
+                get {
+                    return this.columnproductImage;
                 }
             }
             
@@ -2525,16 +2525,16 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductsRow AddProductsRow(string productName, string productImage, string grade, int volume, string composition, int cost) {
+            public ProductsRow AddProductsRow(string productName, string grade, int volume, string composition, int cost, byte[] productImage) {
                 ProductsRow rowProductsRow = ((ProductsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         productName,
-                        productImage,
                         grade,
                         volume,
                         composition,
-                        cost};
+                        cost,
+                        productImage};
                 rowProductsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductsRow);
                 return rowProductsRow;
@@ -2566,11 +2566,11 @@ namespace MUGAdmin {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnproductName = base.Columns["productName"];
-                this.columnproductImage = base.Columns["productImage"];
                 this.columngrade = base.Columns["grade"];
                 this.columnvolume = base.Columns["volume"];
                 this.columncomposition = base.Columns["composition"];
                 this.columncost = base.Columns["cost"];
+                this.columnproductImage = base.Columns["productImage"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2580,8 +2580,6 @@ namespace MUGAdmin {
                 base.Columns.Add(this.columnid);
                 this.columnproductName = new global::System.Data.DataColumn("productName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproductName);
-                this.columnproductImage = new global::System.Data.DataColumn("productImage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproductImage);
                 this.columngrade = new global::System.Data.DataColumn("grade", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngrade);
                 this.columnvolume = new global::System.Data.DataColumn("volume", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2590,6 +2588,8 @@ namespace MUGAdmin {
                 base.Columns.Add(this.columncomposition);
                 this.columncost = new global::System.Data.DataColumn("cost", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncost);
+                this.columnproductImage = new global::System.Data.DataColumn("productImage", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproductImage);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2599,7 +2599,6 @@ namespace MUGAdmin {
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
                 this.columnproductName.MaxLength = 2147483647;
-                this.columnproductImage.MaxLength = 2147483647;
                 this.columngrade.MaxLength = 2147483647;
                 this.columncomposition.MaxLength = 2147483647;
             }
@@ -3547,22 +3546,6 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string productImage {
-                get {
-                    try {
-                        return ((string)(this[this.tableProducts.productImageColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'productImage\' в таблице \'Products\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProducts.productImageColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string grade {
                 get {
                     try {
@@ -3627,6 +3610,22 @@ namespace MUGAdmin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte[] productImage {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableProducts.productImageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'productImage\' в таблице \'Products\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProducts.productImageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsproductNameNull() {
                 return this.IsNull(this.tableProducts.productNameColumn);
             }
@@ -3635,18 +3634,6 @@ namespace MUGAdmin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetproductNameNull() {
                 this[this.tableProducts.productNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsproductImageNull() {
-                return this.IsNull(this.tableProducts.productImageColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetproductImageNull() {
-                this[this.tableProducts.productImageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3695,6 +3682,18 @@ namespace MUGAdmin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcostNull() {
                 this[this.tableProducts.costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsproductImageNull() {
+                return this.IsNull(this.tableProducts.productImageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetproductImageNull() {
+                this[this.tableProducts.productImageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5908,17 +5907,17 @@ SELECT id, userId, orderDate FROM UserOrder WHERE (id = @id)";
             tableMapping.DataSetTable = "Products";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("productName", "productName");
-            tableMapping.ColumnMappings.Add("productImage", "productImage");
             tableMapping.ColumnMappings.Add("grade", "grade");
             tableMapping.ColumnMappings.Add("volume", "volume");
             tableMapping.ColumnMappings.Add("composition", "composition");
             tableMapping.ColumnMappings.Add("cost", "cost");
+            tableMapping.ColumnMappings.Add("productImage", "productImage");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Products] WHERE (([id] = @Original_id) AND ((@IsNull_volume = " +
-                "1 AND [volume] IS NULL) OR ([volume] = @Original_volume)) AND ((@IsNull_cost = 1" +
-                " AND [cost] IS NULL) OR ([cost] = @Original_cost)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Products] WHERE (([id] = @Original_id) AND ((@IsNull_volume = 1 AND " +
+                "[volume] IS NULL) OR ([volume] = @Original_volume)) AND ((@IsNull_cost = 1 AND [" +
+                "cost] IS NULL) OR ([cost] = @Original_cost)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_volume", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "volume", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5927,26 +5926,26 @@ SELECT id, userId, orderDate FROM UserOrder WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Products] ([productName], [productImage], [grade], [volume], [composition], [cost]) VALUES (@productName, @productImage, @grade, @volume, @composition, @cost);
-SELECT id, productName, productImage, grade, volume, composition, cost FROM Products WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Products] ([productName], [grade], [volume], [composition], [cost], [productImage]) VALUES (@productName, @grade, @volume, @composition, @cost, @productImage);
+SELECT id, productName, grade, volume, composition, cost, productImage FROM Products WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@volume", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "volume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@composition", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "composition", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Products] SET [productName] = @productName, [productImage] = @productImage, [grade] = @grade, [volume] = @volume, [composition] = @composition, [cost] = @cost WHERE (([id] = @Original_id) AND ((@IsNull_volume = 1 AND [volume] IS NULL) OR ([volume] = @Original_volume)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)));
-SELECT id, productName, productImage, grade, volume, composition, cost FROM Products WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Products] SET [productName] = @productName, [grade] = @grade, [volume] = @volume, [composition] = @composition, [cost] = @cost, [productImage] = @productImage WHERE (([id] = @Original_id) AND ((@IsNull_volume = 1 AND [volume] IS NULL) OR ([volume] = @Original_volume)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)));
+SELECT id, productName, grade, volume, composition, cost, productImage FROM Products WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@volume", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "volume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@composition", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "composition", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_volume", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "volume", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_volume", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "volume", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5968,8 +5967,8 @@ SELECT id, productName, productImage, grade, volume, composition, cost FROM Prod
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, productName, productImage, grade, volume, composition, cost FROM dbo.P" +
-                "roducts";
+            this._commandCollection[0].CommandText = "SELECT id, productName, grade, volume, composition, cost, productImage FROM Produ" +
+                "cts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6068,42 +6067,42 @@ SELECT id, productName, productImage, grade, volume, composition, cost FROM Prod
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string productName, string productImage, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost) {
+        public virtual int Insert(string productName, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost, byte[] productImage) {
             if ((productName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(productName));
             }
-            if ((productImage == null)) {
+            if ((grade == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(productImage));
-            }
-            if ((grade == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(grade));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(grade));
             }
             if ((volume.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(volume.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(volume.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((composition == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(composition));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(composition));
             }
             if ((cost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(cost.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(cost.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((productImage == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(productImage));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6125,42 +6124,42 @@ SELECT id, productName, productImage, grade, volume, composition, cost FROM Prod
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string productName, string productImage, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost, int Original_id, global::System.Nullable<int> Original_volume, global::System.Nullable<int> Original_cost, int id) {
+        public virtual int Update(string productName, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost, byte[] productImage, int Original_id, global::System.Nullable<int> Original_volume, global::System.Nullable<int> Original_cost, int id) {
             if ((productName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(productName));
             }
-            if ((productImage == null)) {
+            if ((grade == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(productImage));
-            }
-            if ((grade == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(grade));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(grade));
             }
             if ((volume.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(volume.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(volume.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((composition == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(composition));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(composition));
             }
             if ((cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(cost.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(cost.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((productImage == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(productImage));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
             if ((Original_volume.HasValue == true)) {
@@ -6200,8 +6199,8 @@ SELECT id, productName, productImage, grade, volume, composition, cost FROM Prod
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string productName, string productImage, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost, int Original_id, global::System.Nullable<int> Original_volume, global::System.Nullable<int> Original_cost) {
-            return this.Update(productName, productImage, grade, volume, composition, cost, Original_id, Original_volume, Original_cost, Original_id);
+        public virtual int Update(string productName, string grade, global::System.Nullable<int> volume, string composition, global::System.Nullable<int> cost, byte[] productImage, int Original_id, global::System.Nullable<int> Original_volume, global::System.Nullable<int> Original_cost) {
+            return this.Update(productName, grade, volume, composition, cost, productImage, Original_id, Original_volume, Original_cost, Original_id);
         }
     }
     

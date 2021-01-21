@@ -44,10 +44,16 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mugDBDataSet = new MUGAdmin.MugDBDataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.productImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBackToLoginTab2 = new System.Windows.Forms.Button();
             this.btnProductManage = new System.Windows.Forms.Button();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productImagePictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnBackToLoginTab3 = new System.Windows.Forms.Button();
             this.btnAdditionsManage = new System.Windows.Forms.Button();
@@ -82,15 +88,6 @@
             this.additionsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.AdditionsTableAdapter();
             this.order_CompositionTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.Order_CompositionTableAdapter();
             this.productsTableAdapter = new MUGAdmin.MugDBDataSetTableAdapters.ProductsTableAdapter();
-            this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.cbProdName = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             productImageLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -99,8 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.additionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.additionsBindingSource)).BeginInit();
@@ -110,13 +108,12 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // productImageLabel
             // 
             productImageLabel.AutoSize = true;
-            productImageLabel.Location = new System.Drawing.Point(528, 68);
+            productImageLabel.Location = new System.Drawing.Point(528, 8);
             productImageLabel.Name = "productImageLabel";
             productImageLabel.Size = new System.Drawing.Size(102, 17);
             productImageLabel.TabIndex = 2;
@@ -251,13 +248,11 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.cbProdName);
+            this.tabPage2.Controls.Add(this.productImagePictureBox);
             this.tabPage2.Controls.Add(this.productsDataGridView);
             this.tabPage2.Controls.Add(this.btnBackToLoginTab2);
             this.tabPage2.Controls.Add(productImageLabel);
             this.tabPage2.Controls.Add(this.btnProductManage);
-            this.tabPage2.Controls.Add(this.productImagePictureBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -265,6 +260,80 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Products";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // productImagePictureBox
+            // 
+            this.productImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productsBindingSource, "productImage", true));
+            this.productImagePictureBox.Location = new System.Drawing.Point(530, 28);
+            this.productImagePictureBox.Name = "productImagePictureBox";
+            this.productImagePictureBox.Size = new System.Drawing.Size(222, 295);
+            this.productImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.productImagePictureBox.TabIndex = 5;
+            this.productImagePictureBox.TabStop = false;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.mugDBDataSet;
+            // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.RowHeadersVisible = false;
+            this.productsDataGridView.RowHeadersWidth = 51;
+            this.productsDataGridView.RowTemplate.Height = 24;
+            this.productsDataGridView.Size = new System.Drawing.Size(522, 320);
+            this.productsDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "productName";
+            this.dataGridViewTextBoxColumn9.HeaderText = "productName";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "grade";
+            this.dataGridViewTextBoxColumn10.HeaderText = "grade";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "volume";
+            this.dataGridViewTextBoxColumn11.HeaderText = "volume";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "composition";
+            this.dataGridViewTextBoxColumn12.HeaderText = "composition";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn13.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 73;
             // 
             // btnBackToLoginTab2
             // 
@@ -285,21 +354,6 @@
             this.btnProductManage.Text = "Manage Table";
             this.btnProductManage.UseVisualStyleBackColor = true;
             this.btnProductManage.Click += new System.EventHandler(this.btnProductManage_Click);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.mugDBDataSet;
-            // 
-            // productImagePictureBox
-            // 
-            this.productImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productsBindingSource, "productImage", true));
-            this.productImagePictureBox.Location = new System.Drawing.Point(531, 88);
-            this.productImagePictureBox.Name = "productImagePictureBox";
-            this.productImagePictureBox.Size = new System.Drawing.Size(221, 235);
-            this.productImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.productImagePictureBox.TabIndex = 3;
-            this.productImagePictureBox.TabStop = false;
             // 
             // tabPage3
             // 
@@ -614,94 +668,6 @@
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // productsDataGridView
-            // 
-            this.productsDataGridView.AutoGenerateColumns = false;
-            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.RowHeadersVisible = false;
-            this.productsDataGridView.RowHeadersWidth = 51;
-            this.productsDataGridView.RowTemplate.Height = 24;
-            this.productsDataGridView.Size = new System.Drawing.Size(522, 324);
-            this.productsDataGridView.TabIndex = 4;
-            // 
-            // cbProdName
-            // 
-            this.cbProdName.FormattingEnabled = true;
-            this.cbProdName.Location = new System.Drawing.Point(531, 28);
-            this.cbProdName.Name = "cbProdName";
-            this.cbProdName.Size = new System.Drawing.Size(221, 24);
-            this.cbProdName.TabIndex = 6;
-            this.cbProdName.TextUpdate += new System.EventHandler(this.cbProdName_TextUpdate);
-            this.cbProdName.TextChanged += new System.EventHandler(this.cbProdName_TextChanged);
-            this.cbProdName.Click += new System.EventHandler(this.cbProdName_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(531, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Select product name:";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "productName";
-            this.dataGridViewTextBoxColumn9.HeaderText = "productName";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "productImage";
-            this.dataGridViewTextBoxColumn10.HeaderText = "productImage";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "grade";
-            this.dataGridViewTextBoxColumn11.HeaderText = "grade";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "volume";
-            this.dataGridViewTextBoxColumn12.HeaderText = "volume";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 53;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "composition";
-            this.dataGridViewTextBoxColumn13.HeaderText = "composition";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn14.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 41;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -719,8 +685,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mugDBDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productImagePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.additionsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.additionsBindingSource)).EndInit();
@@ -731,7 +698,6 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_CompositionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,17 +753,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private MugDBDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.PictureBox productImagePictureBox;
         private System.Windows.Forms.DataGridView productsDataGridView;
-        private MugDBDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.ComboBox cbProdName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }
 
